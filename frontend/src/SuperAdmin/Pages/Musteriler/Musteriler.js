@@ -62,6 +62,60 @@ export class Musteriler extends Component {
           removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
           goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
         },
+        {
+          firmName: 'Flo',
+          firmAddress: 'İzmir Konak Piri Reis mah.',
+          firmPhone: '0555 555 55 55',
+          firmMail: 'info@flo.com',
+          paymentStatus: 'Ödendi',
+          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+        },
+        {
+          firmName: 'Flo',
+          firmAddress: 'İzmir Konak Piri Reis mah.',
+          firmPhone: '0555 555 55 55',
+          firmMail: 'info@flo.com',
+          paymentStatus: 'Ödendi',
+          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+        },
+        {
+          firmName: 'Flo',
+          firmAddress: 'İzmir Konak Piri Reis mah.',
+          firmPhone: '0555 555 55 55',
+          firmMail: 'info@flo.com',
+          paymentStatus: 'Ödendi',
+          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+        },
+        {
+          firmName: 'Flo',
+          firmAddress: 'İzmir Konak Piri Reis mah.',
+          firmPhone: '0555 555 55 55',
+          firmMail: 'info@flo.com',
+          paymentStatus: 'Ödendi',
+          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+        },
+        {
+          firmName: 'Flo',
+          firmAddress: 'İzmir Konak Piri Reis mah.',
+          firmPhone: '0555 555 55 55',
+          firmMail: 'info@flo.com',
+          paymentStatus: 'Ödendi',
+          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+        },
+        {
+          firmName: 'Flo',
+          firmAddress: 'İzmir Konak Piri Reis mah.',
+          firmPhone: '0555 555 55 55',
+          firmMail: 'info@flo.com',
+          paymentStatus: 'Ödendi',
+          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+        },
         
         
       ]
@@ -85,7 +139,8 @@ export class Musteriler extends Component {
             <h5>Bilgi</h5>
         </div>
         <div className="card-body">
-          <p>Buraya bilgi gelecek</p>
+          <p>Burada siteye üye olan firma listesi yer almaktadır.Eğer firma ödemede geciktirme yaptıysa "web sitesi kaldır" butonu ile sitesi pasif edilebilir.
+            "Web sitesine git" butonu ile de firmanın sistemine girip müşterinin sayfasını görebilir. </p>
         </div>
       </div>
       <div className="card  mt-3">
