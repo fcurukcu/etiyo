@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
     transition: .3s ease;
+    font-size: 1.1rem;
 }
 
 /* Colors */
@@ -23,7 +24,7 @@
 }
 
 a{
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 li{
@@ -40,7 +41,7 @@ li{
 }
 
 .icon{
-    font-size: 2rem;
+    
     cursor: pointer;
 }
 
@@ -84,7 +85,6 @@ li{
 }
 .secIntro p{
    
-    font-size: 10px;
     color: var(--textColor);
     font-weight: 500;
 }
@@ -106,3 +106,4 @@ input{
     border-radius: 10px;
     cursor: pointer;
 }
+

@@ -1,6 +1,6 @@
 :root {
-  --header-height: 3rem;
-  --nav-width: 68px;
+  --header-height: 5rem;
+  --nav-width: 57px;
 
   --first-color: #6e6e6e;
   --first-color-alt: #f582a7;
@@ -23,7 +23,7 @@ main {
   margin: var(--header-height) 0 0 0;
   padding: 0 1rem;
   font-size: 1rem;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   transition: 0.5s;
 }
 
@@ -51,7 +51,6 @@ main {
   position: fixed;
   top: 0;
   left: -30%;
-  height: 100vh;
   width: var(--nav-width);
   background-color: var(--first-color);
   padding-top: 1rem;
@@ -63,7 +62,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  height: 100%;
+   height: auto !important;
 }
 
 .nav-logo,
@@ -78,11 +77,15 @@ main {
   margin-bottom: 2rem;
 }
 
-/* nav-link-icon {
-  font-size: 1rem;
+ .nav-link-icon {
+  font-size: 2.5rem;
   color: var(--white-color);
   cursor: pointer;
-} */
+} 
+
+.nav-link-icon-show{
+  font-size: 1.5rem;
+}
 
 .nav-logo-name {
   font-weight: 700;
@@ -90,7 +93,7 @@ main {
 }
 .nav-link-name{
   text-decoration: none;
-  font-size: .9rem !important;
+  font-size: 1.1rem !important;
 }
 
 .nav-link {
@@ -100,10 +103,10 @@ main {
   margin-bottom: 0.2rem;
   height: 60px;
   padding-top: 20px;
-  
+  text-decoration: none;
 }
 .nav-list{
-    margin-top: -70px;
+    margin-top: 20px;
 }
 
 .nav-link:hover {
@@ -125,7 +128,7 @@ main {
   top: 0;
   height: 60px;
   width: 3px;
-  background: rgb(243, 240, 240);
+  background: none;
 
   transition: 0.5s;
 }
@@ -138,18 +141,14 @@ main {
   padding-left: calc(var(--nav-width) + 1rem);
 }
 .firmalogomuz{
-  
-
-    width: 112px;
-    height: 35px;
- 
-
+    width: 95px;
+    height: 92%;
 }
 .firmalogomuzshow{
     margin-top: 5px;
     margin-left: 30px;
     width: 130px;
-    height: 40px;
+    height: 100%;
 }
 @media screen and (min-width: 768px) {
   main {

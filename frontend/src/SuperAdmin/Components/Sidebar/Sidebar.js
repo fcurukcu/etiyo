@@ -25,20 +25,20 @@ const Sidebar = () => {
       <aside className={`sidebar ${show ? 'show' : null}`}>
         <nav className='nav'>
             <img src={logo} className={`firmalogomuz ${show ? 'firmalogomuzshow' : null}`}/>
-          <div>
+          <div style={{height: "90vh"}}>
            
 
             <div className='nav-list'>
             <LinkRouter to='/home' className='nav-link active'>
-              <i className={`fas fa-th-large nav-link-icon`}></i>
+              <i className={`fas fa-th-large nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
               <span className='nav-link-name'>Anasayfa</span>
             </LinkRouter>
               <LinkRouter to='/musteriler' className='nav-link'>
-                <i className='fa-solid fa-pen-to-square nav-link-icon'></i>
+              <i className={`fa-solid fa-pen-to-square nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
                 <span className='nav-link-name'>Müşteriler</span>
               </LinkRouter>
               <LinkRouter to='/destek' className='nav-link'>
-                <i className='fa-solid fa-bag-shopping nav-link-icon'></i>
+              <i className={`fa-solid fa-bag-shopping  nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
                 <span className='nav-link-name'>Destek</span>
               </LinkRouter>
              
@@ -46,15 +46,15 @@ const Sidebar = () => {
           </div>
 
           <LinkRouter to='/logout' className='nav-link'>
-            <i className='fas fa-sign-out nav-link-icon'></i>
+          <i className={`fas fa-sign-out nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
             <span className='nav-link-name'>Logout</span>
           </LinkRouter>
         </nav>
         
       </aside>
       <Switch>
-    <Route exact path='/home' render={() => <Anasayfa/>} />
-      <Route exact path='/musteriler' render={() => <Musteriler/>} />
+    <Route exact path='/home' render={() => <Anasayfa  style={{marginTop:"30px"}}/>} />
+      <Route exact path='/musteriler' render={() => <Musteriler />} />
       <Route exact path='/destek' render={() => <Destek/>} />
       
       {/* <Route exact path='/logout' render={() => <Logout />} /> */}

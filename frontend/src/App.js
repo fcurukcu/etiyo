@@ -14,6 +14,8 @@ import {
 import Sidebar from './FirmaKullanicisi/Eticaret/components/Sidebar/Sidebar';
 import AdminLogin from './SuperAdmin/Pages/AdminLogin/adminLogin';
 import SidebarAdmin from './SuperAdmin/Components/Sidebar/Sidebar';
+import {AG_GRID_LOCALE_EN} from './traslate/tableEn';
+import {AG_GRID_LOCALE_TR} from './traslate/tableTr';
 function App() {
   return (
    <>
