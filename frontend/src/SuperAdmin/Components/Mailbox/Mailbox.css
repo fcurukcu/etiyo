@@ -1,0 +1,237 @@
+.mailBoxH1{
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1;
+    Letter-spacing: -.025em;
+    transform: none;
+}
+.mailBoxRow{
+    margin-top: 4rem;
+    margin-bottom: 2.4rem;
+    margin-left: 2.4rem;
+    margin-right: 2.4rem
+}
+.mailBoxLink{
+    width:100%;
+    font-size: 13px;
+    margin-top: 3.2rem
+}
+.mailBoxSpan{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    padding-left: 2.8rem;
+    padding-right: 2.8rem;
+    line-height: 1.5;
+    color: rgb(79, 70, 229);
+    margin: 0px
+}
+.mailBoxUl{
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    white-space: nowrap;
+    list-style: none;
+    margin: 0px;
+    padding: 8px 0px;
+    position: relative;
+}
+.mailBoxUlLi{
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    text-align: left;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    min-height: 44px;
+    width: 100%;
+    border-radius: 6px;
+    margin: 0px 0px 4px;
+    padding: 10px 16px;
+    color: rgba(17, 24, 39, 0.7);
+    cursor: pointer;
+    text-decoration: none !important;
+}
+.mailBoxUlLii{
+    margin-right: 16px;
+    color: inherit;
+    fill: currentColor;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    font-size: 24px;
+    /* line-height: 24; */
+    color: rgba(0, 0, 0, 0.54);
+}
+.mailBoxUldiv{
+    margin: 0px;
+    flex: 1 1 auto;
+    min-width: 0px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.mailBoxUlDivSpan{
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px;
+    display: block;
+}
+.activeLi{
+    color: rgb(17, 24, 39);
+    pointer-events: none;
+    transition: border-radius 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.mailBoxUlLi:hover{
+    color: rgb(17, 24, 39);
+    pointer-events: none;
+    transition: border-radius 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+.message{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1 1 auto;
+    overflow: hidden;
+    z-index: 9999;
+}
+.messageDiv{
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: start;
+    min-height: 0px;
+    overflow-y: auto;
+    max-width: 1570px;
+    width: 100%;
+    margin: 0px auto;
+    overflow: hidden!important;
+    overflow-anchor: none;
+    -ms-overflow-style: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+    -ms-overflow-style: none;
+    overflow: hidden!important;
+    overflow-anchor: none;
+    touch-action: auto;
+    -ms-touch-action: auto;
+}
+.messageFlex{
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+}
+.messageSticky{
+    z-index: 10;
+    top: 0;
+    position: sticky;
+}
+.messafeFlexS{
+    padding-bottom: 1.2rem;
+    padding-top: 1.2rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    border-bottom-width: 1px;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 6.4rem;
+    display: flex;
+    background-color: rgb(241, 245, 249);
+    border-color: rgb(226, 232, 240);
+}
+.messafeFlexSDiv{
+    align-items: center;
+    display: flex;
+}
+.messafeFlexSDivP{
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    margin: 0px;
+    font-size: 1.4rem;
+    font-family: "Inter var", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.messafeFlexSearch{
+    --tw-space-x-reverse: 0;
+    margin-left: calc(0.8rem*(1 - var(--tw-space-x-reverse)));
+    margin-right: calc(0.8rem*var(--tw-space-x-reverse));
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    border-radius: 9999px;
+    align-items: center;
+    flex: 1 1;
+    display: flex;
+    font-size: 1.4rem;
+    font-family: "Inter var", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: rgb(17, 24, 39);
+    box-sizing: border-box;
+    cursor: text;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+    line-height: 1;
+    position: relative;
+    border-radius: 4px;
+    padding-left: 14px;
+}
+.messafeFlexSearchIcon{
+    display: flex;
+    height: 0.01em;
+    max-height: 2em;
+    align-items: center;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.54);
+    margin-right: 8px;
+}
+.mfsfsSearch{
+    fill: currentColor;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    font-size: 24px;
+    line-height: 24;
+    color: rgba(0, 0, 0, 0.26);
+    display: block;
+    vertical-align: middle;
+}
+.mfsfsInput{
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentcolor;
+    border: 0px;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+    padding: 8.5px 14px 8.5px 0px;
+}
