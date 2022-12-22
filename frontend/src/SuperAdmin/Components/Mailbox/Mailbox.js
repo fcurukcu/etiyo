@@ -65,14 +65,48 @@ class Mailbox extends Component {
                             <i className='fa fa-search mfsfsSearch'></i>
                           </div>
                           <input placeholder="Search for an e-mail or task" type="text" aria-label="Search"
-                           class="mfsfsInput" value=""></input>
+                           class="mfsfsInput" value="" />
                       </div>
                     </div>
                 </div>
-                <div>
 
+                <div className='allMessageDiv'>
+                  <span className='allMessageSpan'>
+                      <input className="allMessageInput" type="checkbox" data-indeterminate="false" />
+                  </span>
+                  <Link className='allMessageDown'><i className='fa fa-angle-down'></i></Link>
                 </div>
             </div>
+            <ul className='allMessageUl'>
+              <Link className='allMessageLink'>
+              <div className='allMessageDiv'>
+                  <span className='allMessageSpan'>
+                      <input className="allMessageInput" type="checkbox" data-indeterminate="false" />
+                  </span>
+                  <div  className='allMess'>
+                    <div  className='messFullFlex'>
+                      <div className='messAvatar'>
+                          <img src="https://react-material.fusetheme.com/assets/images/avatars/female-01.jpg" class="MuiAvatar-img muiltr-1hy9t21" />
+                      </div>
+                      <div className='messHead'>
+                          <div className='messSubHead1'>
+                              <p className='messSubHead1P'>Myra Dudley</p>
+                              <i className='fa fa-exclamation-circle messSubHead1I'></i>
+                              <p className='messSubHead1date'>Jan 25</p>
+                          </div>
+                          <div className='messSubHead2'>
+                          <span className='messSubHead2Span'>Please review and sign the attached agreement</span>
+                          </div>
+                      </div>
+                    </div>
+                    <p className='messFullP'>
+                    Hi Brian,Ullamco deserunt commodo esse deserunt deserunt quis eiusmod. Laborum sint excepteur non sit eiusmod sunt voluptate ipsum nisi ullamco magna. Lorem consectetur est do...
+                    </p>
+                  </div>
+                </div>
+                </Link>
+            </ul>
+
           </div>
           </div>
         </div>
