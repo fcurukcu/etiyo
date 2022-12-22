@@ -4,6 +4,7 @@ import './Musteriler.css';
 import { MDBDataTable } from 'mdbreact';
 import { Link } from 'react-router-dom';
 export class Musteriler extends Component {
+  
   render() {
     const data = {
       columns: [
