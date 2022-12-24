@@ -1,0 +1,74 @@
+.NavbarEticaretTema{
+    border-bottom: 2px solid #ccc;
+}
+.headerEticaretTema{
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 0px 50px;
+    height: 80px;
+    align-items: center;
+
+    background-color: rgb(255, 255, 255);
+
+}
+.logoEticaretTema img{
+   height: 140px;
+   margin-top: -15px !important;
+}
+.searchEticaretTema{
+   
+    margin-top: -40px !important;
+}
+.searchEticaretTema input{
+   
+    background-color: rgb(226, 225, 225);
+    color: black;
+    height: 35px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+.iconsEticaretTema{
+    text-align: right;
+    margin-top: -40px !important;
+}
+.iconsEticaretTema .EticareticonFa{
+    color: rgb(180, 179, 179);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0px 6px;
+    transition: 0.6s;
+  
+}
+.iconsEticaretTema a{
+    text-decoration: none;
+    color: rgb(180, 179, 179);
+}
+
+.EticareticonFa :hover{
+    color: black;
+}
+.linksEticaretTema{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+
+}
+.linksEticaretTema a{
+    color: rgb(5, 5, 5);
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    font-size: 18px;
+    float: left;
+
+   
+   
+}
