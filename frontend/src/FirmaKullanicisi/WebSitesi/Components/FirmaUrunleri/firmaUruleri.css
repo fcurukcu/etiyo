@@ -117,7 +117,7 @@
   padding: 1rem;
 }
 .firmaUrunleri .secContainer .firmaContent .singleDestination .destFooter .number {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--blackColor);
   position: relative;

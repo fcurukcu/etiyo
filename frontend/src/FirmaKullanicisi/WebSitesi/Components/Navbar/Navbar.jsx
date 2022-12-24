@@ -33,7 +33,7 @@ const Navbar = () => {
 
       <div className={transparent}>
         <div className="logoDiv">
-          <a href="#" className='logo'>
+          <a href="#" className='logoFirmaGiris'>
             <img
               src={logo}
               
@@ -41,31 +41,31 @@ const Navbar = () => {
           </a>
         </div>
         <div className={active}>
-          <ul className="navLists flex">
-            <li className="navItem">
-              <LinkScroll className="navLink" to="home" smooth={true} duration={500}>Home</LinkScroll>
+          <ul className="navListsFirmaGiris flex">
+            <li className="navItemFirmaGiris">
+              <LinkScroll className="navLinkFirmaGiris" to="home" smooth={true} duration={500}>Home</LinkScroll>
             </li>
-            <li className="navItem">
-              <LinkScroll className="navLink" to="firmaUrunleri" smooth={true} offset={-15} duration={500}>Products</LinkScroll>
+            <li className="navItemFirmaGiris">
+              <LinkScroll className="navLinkFirmaGiris" to="firmaUrunleri" smooth={true} offset={-15} duration={500}>Products</LinkScroll>
             </li>
-            <li className="navItem">
-              <LinkScroll className="navLink" to="about" smooth={true} offset={-50} duration={500}>About</LinkScroll>
+            <li className="navItemFirmaGiris">
+              <LinkScroll className="navLinkFirmaGiris" to="about" smooth={true} offset={-50} duration={500}>About</LinkScroll>
             </li>
-            <li className="navItem">
-              <LinkScroll className="navLink" to="iletisim" smooth={true} offset={-50} duration={500}>Contact</LinkScroll>
+            <li className="navItemFirmaGiris">
+              <LinkScroll className="navLinkFirmaGiris" to="iletisim" smooth={true} offset={-50} duration={500}>Contact</LinkScroll>
             </li>
-            <li className="navItem">
-              <LinkRouter className="navLink" to="/ecommerce">Ecommerce</LinkRouter>
+            <li className="navItemFirmaGiris">
+              <LinkRouter className="navLinkFirmaGiris" to="/ecommerce">Ecommerce</LinkRouter>
             </li>
             <div className="headerBtns flex">
               <LinkRouter className="btna" to="/login">
-                <button className="btn loginBtn">
+                <button className="btnfirmaGiris loginBtn">
                   Login
 
                 </button>
               </LinkRouter>
               <LinkRouter className="btna" to="/singup">
-                <button className="btn loginBtn">
+                <button className="btnfirmaGiris loginBtn">
                   Sing Up
                 </button>
               </LinkRouter>

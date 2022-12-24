@@ -14,27 +14,28 @@ import {
 import Sidebar from './FirmaKullanicisi/Eticaret/components/Sidebar/Sidebar';
 import AdminLogin from './SuperAdmin/Pages/AdminLogin/adminLogin';
 import SidebarAdmin from './SuperAdmin/Components/Sidebar/Sidebar';
+import Home from './EticaretTema/Pages/Home/Home';
 import {AG_GRID_LOCALE_EN} from './traslate/tableEn';
 import {AG_GRID_LOCALE_TR} from './traslate/tableTr';
 function App() {
   return (
    <>
  
- 
- 
+  {/* eticaretTemplate*/}
+   <Home/>
   {/* süper admin*/}
      {/* <AdminLogin/> */}
-     <Router>
+     {/* <Router>
         <SidebarAdmin/>
-       </Router>
+       </Router> */}
 
   {/* Firma Kullanıcısı*/}
         {/* <Router>
         <Sidebar/>
         </Router> */}
    
-        {/*    
-          <Router>
+           
+          {/* <Router>
 
               <Switch>
               <Route path='/' component={HomePage} exact/>

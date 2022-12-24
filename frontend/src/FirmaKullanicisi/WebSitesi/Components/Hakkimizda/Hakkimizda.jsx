@@ -11,7 +11,7 @@ export class Hakkimizda extends Component {
              <h2 className="title">
               Why Etiyo?
              </h2>
-             <div className="mainContent container grid">
+             <div className="mainContent2 container2 grid">
                  <div className="singleItem">
                      <img src={eticaret} alt="Image Name" />
                      <h3>Ecommerce</h3>
