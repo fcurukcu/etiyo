@@ -17,39 +17,39 @@
   text-align: center;
   font-size: 22px;
 }
-.about .secContainer .mainContent {
+.about .secContainer .mainContent2 {
   gap: 1rem;
 }
-.about .secContainer .mainContent .singleItem {
+.about .secContainer .mainContent2 .singleItem {
   text-align: center;
 }
-.about .secContainer .mainContent .singleItem img {
+.about .secContainer .mainContent2 .singleItem img {
   background: rgba(247, 144, 54, 0.265);
   width: 65px;
   border-radius: 20%;
   padding: 1rem;
   align-items: center;
 }
-.about .secContainer .mainContent .singleItem h3 {
+.about .secContainer .mainContent2 .singleItem h3 {
   font-weight: 700;
   color: var(--blackColor);
   padding: 0.5rem;
   font-size: 1.2rem;
 }
-.about .secContainer .mainContent .singleItem p {
-  font-size: 13px;
+.about .secContainer .mainContent2 .singleItem p {
+  font-size: 10px;
   font-weight: 500;
   padding-bottom: 0.6rem;
   color: var(--textColor);
 }
 
 @media screen and (min-width: 556px) {
-  .mainContent {
+  .mainContent2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (min-width: 884px) {
-  .mainContent {
+@media screen and (min-width: 940px) {
+  .mainContent2 {
     grid-template-columns: repeat(3, 1fr);
   }
 }/*# sourceMappingURL=hakkimizda.css.map */

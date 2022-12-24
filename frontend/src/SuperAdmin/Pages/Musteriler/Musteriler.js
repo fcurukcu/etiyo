@@ -60,8 +60,8 @@ export class Musteriler extends Component {
           firmPhone: '0555 555 55 55',
           firmMail: 'info@flo.com',
           paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
         },
         {
           firmName: 'Flo',
@@ -69,8 +69,8 @@ export class Musteriler extends Component {
           firmPhone: '0555 555 55 55',
           firmMail: 'info@flo.com',
           paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
         },
         {
           firmName: 'Flo',
@@ -78,8 +78,8 @@ export class Musteriler extends Component {
           firmPhone: '0555 555 55 55',
           firmMail: 'info@flo.com',
           paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
         },
         {
           firmName: 'Flo',
@@ -87,8 +87,8 @@ export class Musteriler extends Component {
           firmPhone: '0555 555 55 55',
           firmMail: 'info@flo.com',
           paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
         },
         {
           firmName: 'Flo',
@@ -96,8 +96,8 @@ export class Musteriler extends Component {
           firmPhone: '0555 555 55 55',
           firmMail: 'info@flo.com',
           paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
         },
         {
           firmName: 'Flo',
@@ -105,8 +105,8 @@ export class Musteriler extends Component {
           firmPhone: '0555 555 55 55',
           firmMail: 'info@flo.com',
           paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
         },
         {
           firmName: 'Flo',
@@ -114,8 +114,8 @@ export class Musteriler extends Component {
           firmPhone: '0555 555 55 55',
           firmMail: 'info@flo.com',
           paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='btn btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='btn btn-success btn-sm'>Git</Link>,
+          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
+          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
         },
         
         

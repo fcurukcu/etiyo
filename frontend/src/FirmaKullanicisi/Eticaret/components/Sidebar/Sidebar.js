@@ -25,36 +25,36 @@ const Sidebar = () => {
       </header>
 
       <aside className={`sidebar ${show ? 'show' : null}`}>
-        <nav className='nav'>
-            <img src={logo} className={`firmalogomuz ${show ? 'firmalogomuzshow' : null}`}/>
+        <nav className='navSidebar'>
+            <img src={logo} className={`firmalogomuzFirmaKullanicisi ${show ? 'firmalogomuzFirmaKullanicisishow' : null}`}/>
           <div>
            
 
-            <div className='nav-list'>
-            <LinkRouter to='/template' className='nav-link active'>
+            <div className='nav-listSidebar'>
+            <LinkRouter to='/template' className='nav-linkSidebar active'>
               <i className={`fas fa-th-large nav-link-icon`}></i>
               <span className='nav-link-name'>Template</span>
             </LinkRouter>
-              <LinkRouter to='/productcategory' className='nav-link'>
+              <LinkRouter to='/productcategory' className='nav-linkSidebar'>
                 <i className='fa-solid fa-pen-to-square nav-link-icon'></i>
                 <span className='nav-link-name'>Product Category</span>
               </LinkRouter>
-              <LinkRouter to='/product' className='nav-link'>
+              <LinkRouter to='/product' className='nav-linkSidebar'>
                 <i className='fa-solid fa-bag-shopping nav-link-icon'></i>
                 <span className='nav-link-name'>Products</span>
               </LinkRouter>
-              <LinkRouter to='/webdesign' className='nav-link'>
+              <LinkRouter to='/webdesign' className='nav-linkSidebar'>
                 <i className='fas fa-palette nav-link-icon'></i>
                 <span className='nav-link-name'>Web Design</span>
               </LinkRouter>
-              <LinkRouter to='/mobileview' className='nav-link'>
+              <LinkRouter to='/mobileview' className='nav-linkSidebar'>
                 <i className='fas fa-mobile-alt nav-link-icon'></i>
                 <span className='nav-link-name'>Mobile View</span>
               </LinkRouter>
             </div>
           </div>
 
-          <LinkRouter to='/logout' className='nav-link'>
+          <LinkRouter to='/logout' className='nav-linkSidebar'>
             <i className='fas fa-sign-out nav-link-icon'></i>
             <span className='nav-link-name'>Logout</span>
           </LinkRouter>

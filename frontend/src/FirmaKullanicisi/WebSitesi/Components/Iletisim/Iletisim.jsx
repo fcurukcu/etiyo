@@ -10,7 +10,7 @@ export class Iletisim extends Component {
   render() {
     return (
       <div id='iletisim' className='iletisim'>
-        <div className="secContainer container grid">
+        <div className="secContainer container2 grid">
           <div className="logoDiv">
             <div className="iletisimLogo">
               <a href="#" className="logo flex">

@@ -19,7 +19,7 @@
 	margin: -20px -25px 10px;
 	border-radius: 3px 3px 0 0;
 }
-.btn{
+.buton{
     padding: .4rem 1.5rem;
     /* background: hsl(26,90%,42%); */
     border: none;
@@ -28,7 +28,7 @@
     cursor: pointer;
 	color: #fff;
 }
-.btn:hover{
+.buton:hover{
   
     /* background: rgb(175, 81, 9); */
 	color: #fff;
@@ -40,7 +40,7 @@
 .table-title .btn-group {
 	float: right;
 }
-.table-title .btn {
+.table-title .buton {
 	color: #fff;
 	float: right;
 	border: none;
@@ -50,11 +50,11 @@
 	outline: none !important;
 	margin-left: 10px;
 }
-.table-title .btn i {
+.table-title .buton i {
 	float: left;
 	margin-right: 5px;
 }
-.table-title .btn span {
+.table-title .buton span {
 	float: left;
 	margin-top: 2px;
 }
@@ -136,7 +136,7 @@ table.table .avatar {
 .modal textarea.form-control {
 	resize: vertical;
 }
-.modal .btn {
+.modal .buton {
 	border-radius: 2px;
 	min-width: 100px;
 }	

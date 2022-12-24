@@ -20,7 +20,7 @@
         padding: 1rem;
         z-index: 1000;
         .logoDiv{
-            .logo{
+            .logoFirmaGiris{
                 font-weight: 500;
                 cursor: pointer;
                 align-items: center;
@@ -37,13 +37,13 @@
             }
 
         }
-        .navLists{
-            .navLink{
+        .navListsFirmaGiris{
+            .navLinkFirmaGiris{
                 cursor: pointer;
                 font-size: .8rem;
             }
             .headerBtns{
-                .btn{
+                .btnfirmaGiris{
                     padding: .4rem 1.5rem;
                     background: var(--PrimaryColor);
                     border: none;
@@ -77,16 +77,16 @@
                 transition: .5s ease;
                 z-index: 1000;
 
-                .navLists{
+                .navListsFirmaGiris{
                     flex-direction: column;
                     justify-content: center;
                     width: 100%;
                     margin: auto;
 
-                    .navItem{
+                    .navItemFirmaGiris{
                         padding: 1rem 0;
                         
-                        .navLink{
+                        .navLinkFirmaGiris{
                             color: var(--textColor);
                             text-decoration: none;
                             font-size: .0.85rem;
@@ -98,7 +98,7 @@
                     }
                     .headerBtns{
                         flex-direction: column;
-                        .btn{
+                        .btnfirmaGiris{
                             margin-top: 1rem;
 
                             .btna{
@@ -142,21 +142,21 @@
         @media screen and (min-width:769px){
            
                 .navBar{
-                    .navLists{
+                    .navListsFirmaGiris{
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         flex-direction: row;
                         padding-top: 10px !important;
                         height: 20px;
-                        .navItem{
+                        .navItemFirmaGiris{
                             
-                            .navLink{
+                            .navLinkFirmaGiris{
                                 
                                 
                                 color: var(--whiteColor);
                                 padding: 0 .30rem;
-                                font-size: 0.85rem;
+                                font-size: 1rem;
                                 text-decoration: none;
                                 font-weight: 400;
                                 cursor: pointer;
@@ -169,9 +169,10 @@
                         .btna{
                             margin-left: 1rem;
                             text-decoration: none;
-                            .btn{
+                            .btnfirmaGiris{
                                 color: var(--whiteColor);
                                 font-weight: 500;
+                                font-size: 1.2rem !important;
                             }
                         }
                         .loginBtn{
@@ -203,19 +204,21 @@
 
         @media screen and (min-width:960px){
             .logoDiv{
-             .logo{
+             .logoFirmaGiris{
               
                      padding-left: 50px;
                 
              }
             } 
              .navBar{
-                 .navLists{
+                 .navListsFirmaGiris{
                      padding-right: 50px !important;
-                     .navItem{
+                     .navItemFirmaGiris{
+                       
                          padding: 0 .5rem;
-                         .navLink{
+                         .navLinkFirmaGiris{
                             padding: 0 .40rem;
+                            font-size: 1.2rem !important;
                          }
                      }
                  }

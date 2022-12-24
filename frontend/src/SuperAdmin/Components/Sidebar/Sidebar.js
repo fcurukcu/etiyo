@@ -23,21 +23,21 @@ const Sidebar = () => {
       </header>
 
       <aside className={`sidebar ${show ? 'show' : null}`}>
-        <nav className='nav'>
+        <nav className='navAdmin'>
             <img src={logo} className={`firmalogomuz ${show ? 'firmalogomuzshow' : null}`}/>
           <div style={{height: "90vh"}}>
            
 
-            <div className='nav-list'>
-            <LinkRouter to='/home' className='nav-link active'>
+            <div className='nav-listadmin'>
+            <LinkRouter to='/home' className='nav-linkadmin active'>
               <i className={`fas fa-th-large nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
               <span className='nav-link-name'>Anasayfa</span>
             </LinkRouter>
-              <LinkRouter to='/musteriler' className='nav-link'>
+              <LinkRouter to='/musteriler' className='nav-linkadmin'>
               <i className={`fa-solid fa-pen-to-square nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
                 <span className='nav-link-name'>Müşteriler</span>
               </LinkRouter>
-              <LinkRouter to='/destek' className='nav-link'>
+              <LinkRouter to='/destek' className='nav-linkadmin'>
               <i className={`fa-solid fa-bag-shopping  nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
                 <span className='nav-link-name'>Destek</span>
               </LinkRouter>
@@ -45,7 +45,7 @@ const Sidebar = () => {
             </div>
           </div>
 
-          <LinkRouter to='/logout' className='nav-link'>
+          <LinkRouter to='/logout' className='nav-linkadmin'>
           <i className={`fas fa-sign-out nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
             <span className='nav-link-name'>Logout</span>
           </LinkRouter>

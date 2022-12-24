@@ -19,7 +19,7 @@
             font-size: 22px;
             
         }
-        .mainContent{
+        .mainContent2{
             gap: 1rem;
             .singleItem{
                 text-align: center;
@@ -37,7 +37,7 @@
                     font-size: 1.2rem;
                 }
                 p{
-                    font-size: 13px;
+                    font-size: 10px;
                     font-weight: 500;
                     padding-bottom: .6rem;
                     color: var(--textColor);
@@ -48,13 +48,13 @@
     }
 }
 @media screen and (min-width:556px){
-    .mainContent{
+    .mainContent2{
         grid-template-columns: repeat(2,1fr);
         
     }
 }
-@media screen and (min-width:884px){
-    .mainContent{
+@media screen and (min-width:940px){
+    .mainContent2{
         grid-template-columns: repeat(3,1fr);
         
     }

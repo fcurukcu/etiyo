@@ -57,7 +57,7 @@ main {
   transition: 0.5s;
 }
 
-.nav {
+.navAdmin {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -66,7 +66,7 @@ main {
 }
 
 .nav-logo,
-.nav-link {
+.nav-linkadmin {
   display: grid;
   grid-template-columns: max-content max-content;
   column-gap: 2rem;
@@ -96,7 +96,7 @@ main {
   font-size: 1.1rem !important;
 }
 
-.nav-link {
+.nav-linkadmin {
   position: relative;
   color: #fff !important;
   transition: 0.5s;
@@ -105,11 +105,11 @@ main {
   padding-top: 20px;
   text-decoration: none;
 }
-.nav-list{
+.nav-listadmin{
     margin-top: 20px;
 }
 
-.nav-link:hover {
+.nav-linkadmin:hover {
   color: hsl(26,93%,50%) !important;
   background-color: rgba(0, 0, 0, 0.1);
 
