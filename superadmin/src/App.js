@@ -1,58 +1,27 @@
-
-import './App.css';
-
-import Login from './FirmaKullanicisi/WebSitesi/Pages/Login/Login';
-import Ecommerce from './FirmaKullanicisi/WebSitesi/Pages/Ecommerce/Ecommerce';
-import SingUp from './FirmaKullanicisi/WebSitesi/Pages/SingUp/SingUp';
-import HomePage from './FirmaKullanicisi/WebSitesi/Pages/HomePage';
-import ForgetPassword from './FirmaKullanicisi/WebSitesi/Pages/ForgetPassword/ForgetPassword';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import Sidebar from './FirmaKullanicisi/Eticaret/components/Sidebar/Sidebar';
-import AdminLogin from './SuperAdmin/Pages/AdminLogin/adminLogin';
-import SidebarAdmin from './SuperAdmin/Components/Sidebar/Sidebar';
-import Home from './EticaretTema/Pages/Home/Home';
-import {AG_GRID_LOCALE_EN} from './traslate/tableEn';
-import {AG_GRID_LOCALE_TR} from './traslate/tableTr';
+import { BrowserRouter,Route,Routes} from 'react-router-dom';
+import React, {Fragment} from 'react';
+import PrivateRoute from './Utils/PrivateRoute';
+import Anasayfa from './Pages/Dashboard/Anasayfa';
+import Musteriler from './Pages/Musteriler/Musteriler';
+import Destek from './Pages/Destek/Destek';
+import Login from './Pages/Login/Login';
 function App() {
   return (
-   <>
- 
-  {/* eticaretTemplate*/}
-   <Home/>
-  {/* süper admin*/}
-     {/* <AdminLogin/> */}
-     {/* <Router>
-        <SidebarAdmin/>
-       </Router> */}
+    <div>
+      <BrowserRouter>
+      <Fragment>
+        <Routes>
+          <Route exact path='/' element={<PrivateRoute/>}>
+             <Route exact path='/' element={<Anasayfa/>} />
+            <Route exact path='/musteriler' element={<Musteriler />} />
+            <Route exact path='/destek' element={<Destek/>} />
+          </Route>
+          <Route exact path='/login' element={<Login/>}/>
+        </Routes>
+      </Fragment>
+    </BrowserRouter>
 
-  {/* Firma Kullanıcısı*/}
-        {/* <Router>
-        <Sidebar/>
-        </Router> */}
-   
-           
-          {/* <Router>
-
-              <Switch>
-              <Route path='/' component={HomePage} exact/>
-                <Route path='/login' component={Login} exact/>
-                <Route path='/ecommerce' component={Ecommerce} exact/>
-                <Route path='/singup' component={SingUp} exact/>
-                <Route path='/forgetpassword' component={ForgetPassword} exact/>
-              </Switch>
-              
-              
-              </Router> */}
-            
-  
- 
-    
-   </>
-   
+    </div>
   );
 }
 
