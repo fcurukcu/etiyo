@@ -9,10 +9,11 @@ import HomePage from './WebSitesi/Pages/HomePage';
 import ForgetPassword from './Pages/ForgetPassword/ForgetPassword';
 import SingUp from './Pages/SingUp/SingUp';
 import './App.css';
-import { Dashboard } from '@mui/icons-material';
 import Templates from './Pages/Templates/Templates';
 import Orders from './Pages/Orders/Orders';
 import Products from './Pages/Products/Products';
+import Categories from './Pages/Categories/Categories';
+import Settings from './Pages/Settings/Settings';
 function App() {
   return (
     <div>
@@ -24,10 +25,10 @@ function App() {
           <Route exact path='/admin' element={<Anasayfa />} />
            <Route exact path='/admin/orders' element={<Orders />} />
             <Route exact path='/admin/products' element={<Products/>} />
-            <Route exact path='/admin/categories' element={<Destek/>} />
+            <Route exact path='/admin/categories' element={<Categories/>} />
             <Route exact path='/admin/support' element={<Destek/>} />
-            <Route exact path='/admin/settings' element={<Destek/>} />
-            <Route exact path='/admin/web-site' element={<Destek/>} />
+            <Route exact path='/admin/settings' element={<Settings/>} />
+            {/* <Route exact path='/admin/web-site' element={<Destek/>} /> */}
             <Route exact path='/admin/templates' element={<Templates/>} />
           </Route>
           <Route exact path='/' element={<HomePage/>} />

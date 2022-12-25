@@ -99,12 +99,16 @@ export class Orders extends Component {
       <>
         <div className='row' style={{ marginBottom: "28px" }}></div>
         <div className='row' >
-          <h3 className="font-weight-bold py-3 mb-0">Sipariş Listesi</h3>
+        <div className='col-md-12' >
+          <h3 className="font-weight-bold py-3 mb-0 head">Sipariş Listesi</h3>
+          <span className='head-span'>
           <ol className="breadcrumb">
             <li className="breadcrumb-item"><a href="#"><i className="feather icon-home"></i></a></li>
             <li className="breadcrumb-item"><a href="#">Sipariş Listesi</a></li>
             {/* <li class="breadcrumb-item active">Transkript Listesi</li> */}
           </ol>
+          </span>
+        </div>
         </div>
 
         <div className="card mt-1">
