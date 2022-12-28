@@ -17,8 +17,8 @@ class Contact extends Component {
 				<div className="col-12">
 					<div className="bread-inner">
 						<ul className="bread-list">
-							<li><a href="index1.html">Home<i className="fa fa-arrow-right"></i></a></li>
-							<li className="active"><a href="blog-single.html">Contact</a></li>
+							<li><a href="#">Anasayfa<i className="fa fa-arrow-right"></i></a></li>
+							<li className="#"><a href="blog-single.html">İletişim</a></li>
 						</ul>
 					</div>
 				</div>
@@ -26,7 +26,7 @@ class Contact extends Component {
             </div>
         </div>
 		<div className='container' style={{textAlign: "center",paddingTop: "37px"}}>
-                        <h3>------ Contact ------</h3>
+                        <h3>------ İletişim ------</h3>
                     </div>
         <section id="contact-us" className="contact-us section">
 		<div className="container">
@@ -35,44 +35,44 @@ class Contact extends Component {
 						<div className="col-lg-8 col-12">
 							<div className="form-main">
 								<div className="title">
-									<h4>Get in touch</h4>
-									<h3>Write us a message</h3>
+									<h4>İletişime Geçin</h4>
+									<h3>Bize mesaj yazın</h3>
 								</div>
 								<form className="form" method="post" action="mail/mail.php">
 									<div className="row">
 										<div className="col-lg-6 col-12">
 											<div className="form-group">
-												<label>Your Name<span>*</span></label>
+												<label>Adınız<span>*</span></label>
 												<input name="name" type="text" placeholder=""/>
 											</div>
 										</div>
 										<div className="col-lg-6 col-12">
 											<div className="form-group">
-												<label>Your Subjects<span>*</span></label>
+												<label>Soyadınız<span>*</span></label>
 												<input name="subject" type="text" placeholder=""/>
 											</div>
 										</div>
 										<div className="col-lg-6 col-12">
 											<div className="form-group">
-												<label>Your Email<span>*</span></label>
+												<label>Mail Adresiniz<span>*</span></label>
 												<input name="email" type="email" placeholder=""/>
 											</div>	
 										</div>
 										<div className="col-lg-6 col-12">
 											<div className="form-group">
-												<label>Your Phone<span>*</span></label>
+												<label>Telefon Numaranız<span>*</span></label>
 												<input name="company_name" type="text" placeholder=""/>
 											</div>	
 										</div>
 										<div className="col-12">
 											<div className="form-group message">
-												<label>your message<span>*</span></label>
+												<label>Mesajınız<span>*</span></label>
 												<textarea name="message" placeholder=""></textarea>
 											</div>
 										</div>
 										<div className="col-12">
 											<div className="form-group button">
-												<button type="submit" className="btn ">Send Message</button>
+												<button type="submit" className="btn ">Mesajı Gönder</button>
 											</div>
 										</div>
 									</div>
@@ -83,7 +83,7 @@ class Contact extends Component {
 							<div className="single-head">
 								<div className="single-info">
 									<i className="fa fa-phone"></i>
-									<h4 className="title">Call us Now:</h4>
+									<h4 className="title">Bizi Şimdi Ara:</h4>
 									<ul>
 										<li>+123 456-789-1120</li>
 										<li>+522 672-452-1120</li>
@@ -99,9 +99,9 @@ class Contact extends Component {
 								</div>
 								<div className="single-info">
 									<i className="fa fa-location-arrow"></i>
-									<h4 className="title">Our Address:</h4>
+									<h4 className="title">Adresimiz:</h4>
 									<ul>
-										<li>KA-62/1, Travel Agency, 45 Grand Central Terminal, New York.</li>
+										<li>İzmir Konak Piri reis mah. 123. sk</li>
 									</ul>
 								</div>
 							</div>

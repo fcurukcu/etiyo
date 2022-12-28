@@ -29,10 +29,7 @@ class Header extends Component {
                             <div className="col-lg-7 col-md-12 col-12">
                                 <div className="right-content">
                                     <ul className="list-main">
-                                        {/* <li><i className="ti-location-pin"></i> Store location</li>
-								<li><i className="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
-								<li><i className="ti-user"></i> <a href="#">My account</a></li> */}
-                                        <li><i className="ti-power-off"></i><Link onClick={() => this.urlChange('/login')} to="/login">Login</Link></li>
+                                        <li><i className="ti-power-off"></i><Link onClick={() => this.urlChange('/login')} to="/login">Giriş Yap</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -48,28 +45,23 @@ class Header extends Component {
                                         <img src={logo} alt="logo" />
                                     </Link>
                                 </div>
-                                <div className="search-top">
+                                {/* <div className="search-top">
                                     <div className="top-search"><a href="#0"><i className="ti-search"></i></a></div>
                                     <div className="search-top">
                                         <form className="search-form">
-                                            <input type="text" placeholder="Search here..." name="search" />
+                                            <input type="text" placeholder="Search here..." name="search"/>
                                             <button type="submit"><i className="ti-search"></i></button>
                                         </form>
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className="mobile-nav"></div>
                             </div>
                             <div className="col-lg-8 col-md-7 col-12">
                                 <div className="search-bar-top">
                                     <div className="search-bar">
-                                        {/* <select>
-									<option selected="selected">All Category</option>
-									<option>watch</option>
-									<option>mobile</option>
-									<option>kid’s item</option>
-								</select> */}
+                                    
                                         <form>
-                                            <input name="search" placeholder="Search Products Here....." type="search" />
+                                            <input name="search" placeholder="Ürün Ara" type="search" />
                                             <button className="btnn"><i className="fa fa-search"></i></button>
                                         </form>
                                     </div>
@@ -87,29 +79,29 @@ class Header extends Component {
                                         <Link onClick={() => this.urlChange('/basket')} to='/basket' className="single-icon"><i className="fa fa-shopping-basket"></i> <span className="total-count">2</span></Link>
                                         <div className="shopping-item">
                                             <div className="dropdown-cart-header">
-                                                <span>2 Items</span>
-                                                <a href="#">View Cart</a>
+                                                <span>2 Ürün</span>
+                                                <a href="#">Tüm Ürünleri Görüntüle</a>
                                             </div>
                                             <ul className="shopping-list">
                                                 <li>
                                                     <a href="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></a>
                                                     <a className="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#" /></a>
-                                                    <h4><a href="#">Woman Ring</a></h4>
-                                                    <p className="quantity">1x - <span className="amount">$99.00</span></p>
+                                                    <h4><a href="#">Kadın Elbise</a></h4>
+                                                    <p className="quantity">1x - <span className="amount">99.00 TL</span></p>
                                                 </li>
                                                 <li>
                                                     <a href="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></a>
                                                     <a className="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#" /></a>
-                                                    <h4><a href="#">Woman Necklace</a></h4>
-                                                    <p className="quantity">1x - <span className="amount">$35.00</span></p>
+                                                    <h4><a href="#">Kadın Kazak</a></h4>
+                                                    <p className="quantity">1x - <span className="amount">35.00 TL</span></p>
                                                 </li>
                                             </ul>
                                             <div className="bottom">
                                                 <div className="total">
-                                                    <span>Total</span>
-                                                    <span className="total-amount">$134.00</span>
+                                                    <span>Toplam</span>
+                                                    <span className="total-amount">134.00 TL</span>
                                                 </div>
-                                                <Link onClick={() => this.urlChange('/product-payment')} to='/product-payment' className="btn animate">Checkout</Link>
+                                                <Link onClick={() => this.urlChange('/product-payment')} to='/product-payment' className="btn animate">Ödeme Yap</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -129,22 +121,9 @@ class Header extends Component {
                                             <div className="navbar-collapse">
                                                 <div className="nav-inner">
                                                     <ul className="nav main-menu menu navbar-nav">
-                                                        <li className="active"><Link onClick={() => this.urlChange('/')} to='/'>Home</Link></li>
-                                                        <li><Link onClick={() => this.urlChange('/products')} to='/products'>Product</Link></li>
-                                                        {/* <li><a href="#">Service</a></li>
-													<li><a href="#">Shop<i className="ti-angle-down"></i><span className="new">New</span></a>
-														<ul className="dropdown">
-															<li><a href="cart.html">Cart</a></li>
-															<li><a href="checkout.html">Checkout</a></li>
-														</ul>
-													</li>
-													<li><a href="#">Pages</a></li>									
-													<li><a href="#">Blog<i className="ti-angle-down"></i></a>
-														<ul className="dropdown">
-															<li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
-														</ul>
-													</li> */}
-                                                        <li><Link onClick={() => this.urlChange('/contact')} to='/contact'>Contact Us</Link></li>
+                                                        <li className="active"><Link onClick={() => this.urlChange('/')} to='/'>Anasayfa</Link></li>
+                                                        <li><Link onClick={() => this.urlChange('/products')} to='/products'>Ürünler</Link></li>
+                                                        <li><Link onClick={() => this.urlChange('/contact')} to='/contact'>İletişim</Link></li>
                                                     </ul>
                                                 </div>
                                             </div>

@@ -22,7 +22,7 @@ function App() {
    <>
  
   {/* eticaretTemplate*/}
-   <Home/>
+   {/* <Home/> */}
   {/* süper admin*/}
      {/* <AdminLogin/> */}
      {/* <Router>
@@ -35,7 +35,7 @@ function App() {
         </Router> */}
    
            
-          {/* <Router>
+          <Router>
 
               <Switch>
               <Route path='/' component={HomePage} exact/>
@@ -46,7 +46,7 @@ function App() {
               </Switch>
               
               
-              </Router> */}
+              </Router>
             
   
  

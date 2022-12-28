@@ -17,8 +17,8 @@ class Login extends Component {
               <div className="col-12">
                   <div className="bread-inner">
                       <ul className="bread-list">
-                          <li><a href="index1.html">Home<i className="fa fa-arrow-right"></i></a></li>
-                          <li className="active"><a href="blog-single.html">Login</a></li>
+                          <li><a href="#">Anasayfa<i className="fa fa-arrow-right"></i></a></li>
+                          <li className="active"><a href="#">Giriş yap</a></li>
                       </ul>
                   </div>
               </div>
@@ -26,7 +26,7 @@ class Login extends Component {
           </div>
       </div>
       <div className='container' style={{textAlign: "center",paddingTop: "37px"}}>
-                      <h3>------ Login ------</h3>
+                      <h3>------ Giriş Yap ------</h3>
                   </div>
       <section id="contact-us" className="contact-us section">
       <div className="container">
@@ -41,13 +41,13 @@ class Login extends Component {
                                   <div className="row">
                                       <div className="col-lg-6 col-12">
                                           <div className="form-group">
-                                              <label>User Name<span>*</span></label>
+                                              <label>Kullanıcı Adı<span>*</span></label>
                                               <input name="name" type="text" placeholder=""/>
                                           </div>
                                       </div>
                                       <div className="col-lg-6 col-12">
                                           <div className="form-group">
-                                              <label>Password<span>*</span></label>
+                                              <label>Şifre<span>*</span></label>
                                               <input name="subject" type="text" placeholder=""/>
                                           </div>
                                       </div>

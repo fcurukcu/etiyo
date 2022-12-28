@@ -12,10 +12,10 @@ import slider from '../../Assets/Image/slider-image2.jpg';
 							<div className="row">
 								<div className="col-lg-7 col-12">
 									<div className="hero-text">
-										<h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
-										<p>Maboriosam in a nesciung eget magnae <br/> dapibus disting tloctio in the find it pereri <br/> odiy maboriosm.</p>
+										<h1><span>50% kadar indirim</span>Erkek Gömleklerinde</h1>
+										<p>Tüm aradığınız ürünlere rahatlıkla ve <br/> kolay bir şekilde satın alabilirsiniz<br/></p>
 										<div className="button">
-											<a href="#" className="btn">Shop Now!</a>
+											<a href="#" className="btn">Alışverişe Başla!</a>
 										</div>
 									</div>
 								</div>

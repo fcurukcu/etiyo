@@ -20,12 +20,17 @@ class App extends Component {
   {
     super(props)
     this.urlChange=this.urlChange.bind(this);
+    if(window.location.pathname==='/template/0')
+    {
+      localStorage.setItem('firmId',window.location.pathname.split('/')[2]);
+      window.open('/');
+    }
   }
   state={
     url:window.location.pathname
   }
   urlChange=(url)=>{
-    console.log(url);
+   
      useState({url:url});
   }
   render() {
@@ -54,6 +59,7 @@ class App extends Component {
           <Route exact path='/aboutus' element={<Index/>}/>
           <Route exact path='/products' element={<Products url={this.state.url} urlFonk={this.urlChange}/>}/>
           <Route exact path='/login' element={<Login url={this.state.url} urlFonk={this.urlChange}/>}/>
+          <Route exact path='/template/:{firmid}' element={<Home url={this.state.url} urlFonk={this.urlChange}/>}/>
         </Routes>
       </Fragment>
       <Footer/>

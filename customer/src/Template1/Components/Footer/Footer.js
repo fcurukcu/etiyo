@@ -15,43 +15,31 @@ class Footer extends Component {
 		<div className="footer-top section">
 			<div className="container">
 				<div className="row">
-					<div className="col-lg-5 col-md-6 col-12">
+					<div className="col-lg-6 col-md-6 col-12">
 						<div className="single-footer about">
 							<div className="logo">
 								<a href="index.html">
                                     <img src={logo2} alt="#"/></a>
 							</div>
-							<p className="text">Praesent dapibus, neque id cursus ucibus, tortor neque egestas augue,  magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-							<p className="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>
-						</div>
-					</div>
-					<div className="col-lg-2 col-md-6 col-12">
-						<div className="single-footer links">
-							<h4>Information</h4>
-							<ul>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Faq</a></li>
-								<li><a href="#">Terms & Conditions</a></li>
-								<li><a href="#">Contact Us</a></li>
-								<li><a href="#">Help</a></li>
-							</ul>
-						</div>
-					</div>
-					<div className="col-lg-2 col-md-6 col-12">
-						<div className="single-footer links">
-							<h4>Customer Service</h4>
-							<ul>
-								<li><a href="#">Payment Methods</a></li>
-								<li><a href="#">Money-back</a></li>
-								<li><a href="#">Returns</a></li>
-								<li><a href="#">Shipping</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-							</ul>
+							<p className="text">Türkiyenin tüm illerine ürün teslimi yapılabilmektedir.</p>
+							<p className="call">Bir sorun var mı? 7/24 bizi arayın<span><a href="tel:123456789">+0123 456 789</a></span></p>
 						</div>
 					</div>
 					<div className="col-lg-3 col-md-6 col-12">
+						<div className="single-footer links">
+							<h4>Bilgi</h4>
+							<ul>
+								<li><a href="#">Anasayfa</a></li>
+								<li><a href="#">Ürünler</a></li>
+								<li><a href="#">İletişim</a></li>
+								
+							</ul>
+						</div>
+					</div>
+					
+					<div className="col-lg-3 col-md-6 col-12">
 						<div className="single-footer social">
-							<h4>Get In Tuch</h4>
+							<h4>İletişim</h4>
 							<div className="contact">
 								<ul>
 									<li>NO. 342 - London Oxford Street.</li>
