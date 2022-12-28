@@ -1,145 +1,63 @@
 import React, { Component } from 'react'
-// import './Musteriler.css';
-
-import { MDBDataTable } from 'mdbreact';
+import { render } from "react-dom";
+import "react-responsive-modal/styles.css";
+import { Modal } from "react-responsive-modal";
+import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
+
+
+import axios from 'axios';
+import Product from './Product';
+import ProductsAdd from './ProductsAdd';
+
 export class Products extends Component {
+  constructor(props) {
 
-  render() {
-    const data = {
-      columns: [
-        {
-          label: 'Ürün ID',
-          field: 'productId',
-          sort: 'asc',
-          width: 150
-        },
-        {
-          label: 'Ürün Numarası',
-          field: 'productNumber',
-          sort: 'asc',
-          width: 270
-        },
-        {
-          label: 'Ürün Adı',
-          field: 'productName',
-          sort: 'asc',
-          width: 200
-        },
-        {
-          label: 'Ürün Kategorisi',
-          field: 'productCategory',
-          sort: 'asc',
-          width: 100
-        },
-        {
-          label: 'Ürün Fiyatı',
-          field: 'productPrice',
-          sort: 'asc',
-          width: 150
-        },
-        {
-          label: 'Ürün Özellikleri',
-          field: 'productProperties',
-          sort: 'asc',
-          width: 100
-        },
-        {
-          label: 'İşlem',
-          field: 'process',
-          sort: 'asc',
-          width: 100
-        }
-      ],
+    super(props);
 
+    this.state = {
 
-      rows: [
-        {
-            productId: '65656565',
-            productNumber: '45sdf45',
-            productName: 'Kruvaze Elbise',
-            productCategory: 'Elbise',
-            productPrice: '500 tl',
-            productProperties:<Link to='/view' className='buton btn-info btn-sm'><i className='fa fa-eye'></i></Link>,
-            process: <><Link to='/view' className='buton btn-warning btn-sm'>Güncelle</Link>
-            <Link to='/view' className='buton btn-danger btn-sm'>Sil</Link>
-            </>,
-        },
-        {
-            productId: '65656565',
-            productNumber: '45sdf45',
-            productName: 'Kruvaze Elbise',
-            productCategory: 'Elbise',
-            productPrice: '500 tl',
-            productProperties:<Link to='/view' className='buton btn-info btn-sm'><i className='fa fa-eye'></i></Link>,
-            process: <><Link to='/view' className='buton btn-warning btn-sm'>Güncelle</Link>
-            <Link to='/view' className='buton btn-danger btn-sm'>Sil</Link>
-            </>,
-        },
-        {
-            productId: '65656565',
-            productNumber: '45sdf45',
-            productName: 'Kruvaze Elbise',
-            productCategory: 'Elbise',
-            productPrice: '500 tl',
-            productProperties:<Link to='/view' className='buton btn-info btn-sm'><i className='fa fa-eye'></i></Link>,
-            process: <><Link to='/view' className='buton btn-warning btn-sm'>Güncelle</Link>
-            <Link to='/view' className='buton btn-danger btn-sm'>Sil</Link>
-            </>,
-        },
-        {
-            productId: '65656565',
-            productNumber: '45sdf45',
-            productName: 'Kruvaze Elbise',
-            productCategory: 'Elbise',
-            productPrice: '500 tl',
-            productProperties:<Link to='/view' className='buton btn-info btn-sm'><i className='fa fa-eye'></i></Link>,
-            process: <><Link to='/view' className='buton btn-warning btn-sm'>Güncelle</Link>
-            <Link to='/view' className='buton btn-danger btn-sm'>Sil</Link>
-            </>,
-        },
-        {
-            productId: '65656565',
-            productNumber: '45sdf45',
-            productName: 'Kruvaze Elbise',
-            productCategory: 'Elbise',
-            productPrice: '500 tl',
-            productProperties:<Link to='/view' className='buton btn-info btn-sm'><i className='fa fa-eye'></i></Link>,
-            process: <><Link to='/view' className='buton btn-warning btn-sm'>Güncelle</Link>
-            <Link to='/view' className='buton btn-danger btn-sm'>Sil</Link>
-            </>,
-        },
-        {
-            productId: '65656565',
-            productNumber: '45sdf45',
-            productName: 'Kruvaze Elbise',
-            productCategory: 'Elbise',
-            productPrice: '500 tl',
-            productProperties:<Link to='/view' className='buton btn-info btn-sm'><i className='fa fa-eye'></i></Link>,
-            process: <><Link to='/view' className='buton btn-warning btn-sm'>Güncelle</Link>
-            <Link to='/view' className='buton btn-danger btn-sm'>Sil</Link>
-            </>,
-        },
+      posts: [],
+      open: false
 
-
-      ]
     };
 
+  }
 
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
+  componentDidMount() {
+    axios.get(`https://localhost:44363/firmaurun/liste`)
+      .then(res => {
+        const posts = res.data.response;
+        this.setState({ posts });
+
+      })
+
+  }
+
+
+  render() {
+    const {open,posts } = this.state;
     return (
       <>
         <div className='row' style={{ marginBottom: "28px" }}></div>
         <div className='row' >
-        <div className='col-md-12' >
-          <h3 className="font-weight-bold py-3 mb-0 head">Ürün Listesi</h3>
-          <span className='head-span'>
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item"><a href="#"><i className="feather icon-home"></i></a></li>
-            <li className="breadcrumb-item"><a href="#">Ürün Listesi</a></li>
-            {/* <li class="breadcrumb-item active">Transkript Listesi</li> */}
-          </ol>
-          </span>
-        </div>
+          <div className='col-md-12' >
+            <h3 className="font-weight-bold py-3 mb-0 head">Ürün Listesi</h3>
+            <span className='head-span'>
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item"><a href="#"><i className="feather icon-home"></i></a></li>
+                <li className="breadcrumb-item"><a href="#">Ürün Listesi</a></li>
+            
+              </ol>
+            </span>
+          </div>
         </div>
 
         <div className="card mt-1">
@@ -152,25 +70,54 @@ export class Products extends Component {
           </div>
         </div>
         <div className="card  mt-3">
-          <div className="card-header" style={{display: "flex"}}>
-            <h5 style={{flex:1}}>Ürünler</h5>
-            <span><Link to='/view' className='buton btn-success btn-sm'>Ürün Ekle</Link></span>
+          <div className="card-header" style={{ display: "flex" }}>
+            <h5 style={{ flex: 1 }}>Ürünler</h5>
+            <span>
+            <button onClick={this.onOpenModal}  className='buton btn-success btn-sm'>Ürün Ekle</button></span>
           </div>
           <div className="card-body">
-            <MDBDataTable
-              striped
-              bordered
-              hover
-              data={data}
-              searchLabel={"Ara"}
-              paginationLabel={["Önce", "Sonra"]}
-              entrieslabel=""
-              noBottomColumns={true}
-            />
+            <MDBTable bordered>
+              <MDBTableHead>
+
+                <tr>
+                  <th scope='col'>Ürün ID</th>
+                  <th scope='col'>Ürün Numarası</th>
+                  <th scope='col'>Ürün Adı</th>
+                  <th scope='col'>Ürün Kategorisi</th>
+                  <th scope='col'>Ürün Fiyatı</th>
+                  <th scope='col'>Ürün Özellikleri</th>
+                  <th scope='col'>İşlem</th>
+                </tr>
+              </MDBTableHead>
+              <MDBTableBody>
+                {
+                  posts.map((post,i) => {
+                    return(
+                  
+                      <Product key={i} props={post}/>
+                    )
+                  })
+                }
+
+
+
+              </MDBTableBody>
+            </MDBTable>
 
           </div>
         </div>
+        <div>
 
+
+        </div>
+        <Modal open={open} onClose={this.onCloseModal} style={{marginTop:"500px"}}>
+                          <div className="card">
+                            <div className="card-body">
+                               <ProductsAdd/>
+                            </div>
+                          </div>
+                        </Modal>
+                      
       </>
     )
   }

@@ -18,8 +18,8 @@ class Products extends Component {
               <div className="col-12">
                   <div className="bread-inner">
                       <ul className="bread-list">
-                          <li><a href="index1.html">Home<i className="fa fa-arrow-right"></i></a></li>
-                          <li className="active"><a href="blog-single.html">Products</a></li>
+                          <li><a href="#">Anasayfa<i className="fa fa-arrow-right"></i></a></li>
+                          <li className="active"><a href="#">Ürünler</a></li>
                       </ul>
                   </div>
               </div>
@@ -27,7 +27,7 @@ class Products extends Component {
           </div>
       </div>
       <div className='container' style={{textAlign: "center",paddingTop: "37px"}}>
-                        <h3>------ Products ------</h3>
+                        <h3>------ Ürünler ------</h3>
                     </div>
       <section id="contact-us" className="contact-us section">
       <div className="container">

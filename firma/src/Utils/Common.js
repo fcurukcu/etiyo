@@ -7,13 +7,13 @@ export const getToken=()=>{
     return sessionStorage.getItem("token")|| null;
 
 }
-export const getType=()=>{
-    return sessionStorage.getItem("type")|| null;
-}
-export const setUserSession=(token,user,type)=>{
+
+export const setUserSession=(token,user)=>{
     sessionStorage.setItem("token",token);
      sessionStorage.setItem("user",user);
-     sessionStorage.setItem("type",type);
+}
+export const setUserTokenSession=(token)=>{
+    sessionStorage.setItem("token",token);
 }
 export const removeUserSession=()=>{
     sessionStorage.removeItem("token");

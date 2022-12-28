@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import './Login.css';
 import logo from '../../Assets/logo.png';
-import {Link as LinkRouter, useNavigate,} from 'react-router-dom';
+import {json, Link as LinkRouter, useNavigate,} from 'react-router-dom';
 import {Button} from '@mui/material';
 import {setUserSession} from '../../Utils/Common';
+import axios from "axios";
 function Login(){
   
     const navigate = useNavigate();
@@ -27,36 +28,35 @@ function Login(){
         setLoading(true);
      
         ////// apiye bağlandıktan sonra 
-            setLoading(false);
-            setError(null);
-            setUserSession('testtttt',JSON.stringify({"user":values.userId}),'lecturer');
-            navigate('/admin');
+           
       
-            // axios('http://analytics.ieu.edu.tr/WebAPITest/api/test/'+values.userId,{
-            //     method:'GET',
-            //      headers:{"Access-Control-Allow-Origin":"*"}
-            //     // authorization:'xxxxxxxxx'}
-            // }).then((res)=>{
-            //     console.log(res)
-            //     setLoading(false);
-            //     setError(null);
-            //     setUserSession('testtttt',JSON.stringify(res.data),'student');
-            //     // setYukleniyor(false);
-            //     // history.go(-1);
-               
-            //     navigate('/');
-            // }).catch(err=>{
-            //     setLoading(false);
-            //     if(error.res.status===401 || error.res.status===400)
-            //     {
-            //         setError(err.response.data.message);
-            //     }
-            //     else
-            //     {
-            //         setError("somethinh went WrongLocation.Please try again later");
-            //     }
+            axios.post('https://localhost:44363/firma/login',{
+                kullanici_adi:values.userId,sifre:values.password
+            }).then((res)=>{
+                setLoading(false);
+                if(res.data.status===200)
+                {
+                    
+                    setError(null);
+                    setUserSession(res.data.response.token,JSON.stringify(res.data.response));
+                    navigate('/admin');
+                }
+                else
+                {
+                    setError(res.data.response);
+                }
+            }).catch(err=>{
+                setLoading(false);
+                if(err.response.status===401 || err.response.status===400)
+                {
+                    setError(err.response.message);
+                }
+                else
+                {
+                    setError("somethinh went WrongLocation.Please try again later");
+                }
                 
-            // })
+            })
         
    
         // login(values.userId,values.password);
@@ -89,7 +89,7 @@ function Login(){
                            {/* <input type="submit" value="Sign Up" className="submit-buttonAdminlogin" /> */}
                 {loading && <input type="submit" value="Bekliyor" disabled className="submit-button" />}
                     {!loading && <input type="submit" value="Login" className="submit-button" />}
-                    {error && <p>{error}</p>}
+                    {error && <p style={{    textAlign: "center",marginTop: "10px",color: "red"}}>{error}</p>}
                 </form>
                 <p className="signin-here">Don't have an account ? <LinkRouter to="/singup">Sing Up</LinkRouter></p>
             </div>

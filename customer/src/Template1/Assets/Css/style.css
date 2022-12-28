@@ -807,9 +807,9 @@ Version:1.0
 	display:inline-block;
 	float:right;
 }
-.header.shop .sub-category {
+.header.shop .sub-category{
 	background: #fff;
-	width: 220px;
+	width: 230px;
 	position: absolute;
 	left: 238px;
 	top: 0;
@@ -824,7 +824,25 @@ Version:1.0
 	-moz-box-shadow: 0px 5px 15px #0000000a;
 	box-shadow: 0px 5px 15px #0000000a;
 }
+.sub-sub-category{
+	background: #fff;
+	width: 190px;
+	position: absolute;
+	left: 200px;
+	top: 0;
+	z-index: 999999;
+	opacity: 0;
+	visibility: hidden;
+	border-left: 3px solid #F7941D;
+	box-shadow: 0px 5px 15px #0000000a;
+	transition: all 0.4s ease;
+}
+
 .header.shop .main-category li:hover .sub-category{
+	opacity:1;
+	visibility:visible;
+}
+.sub-category li:hover .sub-sub-category{
 	opacity:1;
 	visibility:visible;
 }

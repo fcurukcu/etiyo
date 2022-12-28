@@ -146,6 +146,7 @@
   @media only screen and (max-width: 767px){
       .box-wrapper{
           width:100%;
+          
       }
       .bg-box{
           display: none;

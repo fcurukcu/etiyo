@@ -1,128 +1,34 @@
 import React, { Component } from 'react'
 import './Musteriler.css';
-
-import { MDBDataTable } from 'mdbreact';
-import { Link } from 'react-router-dom';
-import Sidebar from '../../Components/Sidebar/Sidebar';
+import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import axios from 'axios';
+import Musteri from './Musteri';
 export class Musteriler extends Component {
+  constructor(props) {
 
-  render() {
-    const data = {
-      columns: [
-        {
-          label: 'Firma Adı',
-          field: 'firmName',
-          sort: 'asc',
-          width: 150
-        },
-        {
-          label: 'Firma Adres',
-          field: 'firmAddress',
-          sort: 'asc',
-          width: 270
-        },
-        {
-          label: 'Firma Telefon',
-          field: 'firmPhone',
-          sort: 'asc',
-          width: 200
-        },
-        {
-          label: 'Firma Mail',
-          field: 'firmMail',
-          sort: 'asc',
-          width: 100
-        },
-        {
-          label: 'Ödeme Durumu',
-          field: 'paymentStatus',
-          sort: 'asc',
-          width: 150
-        },
-        {
-          label: 'Web Sitesi Kaldır',
-          field: 'removeWebsite',
-          sort: 'asc',
-          width: 100
-        },
-        {
-          label: 'Web Sitesi Git',
-          field: 'goWebsite',
-          sort: 'asc',
-          width: 100
-        }
-      ],
+    super(props);
 
+    this.state = {
 
-      rows: [
-        {
-          firmName: 'Flo',
-          firmAddress: 'İzmir Konak Piri Reis mah.',
-          firmPhone: '0555 555 55 55',
-          firmMail: 'info@flo.com',
-          paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
-        },
-        {
-          firmName: 'Flo',
-          firmAddress: 'İzmir Konak Piri Reis mah.',
-          firmPhone: '0555 555 55 55',
-          firmMail: 'info@flo.com',
-          paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
-        },
-        {
-          firmName: 'Flo',
-          firmAddress: 'İzmir Konak Piri Reis mah.',
-          firmPhone: '0555 555 55 55',
-          firmMail: 'info@flo.com',
-          paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
-        },
-        {
-          firmName: 'Flo',
-          firmAddress: 'İzmir Konak Piri Reis mah.',
-          firmPhone: '0555 555 55 55',
-          firmMail: 'info@flo.com',
-          paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
-        },
-        {
-          firmName: 'Flo',
-          firmAddress: 'İzmir Konak Piri Reis mah.',
-          firmPhone: '0555 555 55 55',
-          firmMail: 'info@flo.com',
-          paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
-        },
-        {
-          firmName: 'Flo',
-          firmAddress: 'İzmir Konak Piri Reis mah.',
-          firmPhone: '0555 555 55 55',
-          firmMail: 'info@flo.com',
-          paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
-        },
-        {
-          firmName: 'Flo',
-          firmAddress: 'İzmir Konak Piri Reis mah.',
-          firmPhone: '0555 555 55 55',
-          firmMail: 'info@flo.com',
-          paymentStatus: 'Ödendi',
-          removeWebsite: <Link to='/view' className='buton btn-success btn-sm'>Kaldır</Link>,
-          goWebsite: <Link to='/view' className='buton btn-success btn-sm'>Git</Link>,
-        },
+      posts: [],
+    
 
-
-      ]
     };
 
+  }
+  componentDidMount() {
+    axios.get(`https://localhost:44363/firma/firmalistesi`)
+      .then(res => {
+        const posts = res.data.response;
+        this.setState({ posts });
+
+      })
+
+  }
+
+  render() {
+  
+    const {posts } = this.state;
 
     return (
       <>
@@ -150,16 +56,35 @@ export class Musteriler extends Component {
             <h5>Müşteriler</h5>
           </div>
           <div className="card-body">
-            <MDBDataTable
-              striped
-              bordered
-              hover
-              data={data}
-              searchLabel={"Ara"}
-              paginationLabel={["Önce", "Sonra"]}
-              entrieslabel=""
-              noBottomColumns={true}
-            />
+          <MDBTable bordered>
+              <MDBTableHead>
+          
+                <tr>
+                  <th scope='col'>Firma ID</th>
+                  <th scope='col'>Firma Adı</th>
+                  <th scope='col'>Firma Adres</th>
+                  <th scope='col'>Firma Telefon</th>
+                  <th scope='col'>Firma Mail</th>
+                  <th scope='col'>Firma Domain</th>
+                  <th scope='col'>Web Sitesini Kaldır</th>
+                  <th scope='col'>Web Sitesine Git</th>
+                </tr>
+              </MDBTableHead>
+              <MDBTableBody>
+                {
+                  posts.map((post,i) => {
+                    return(
+                  
+                      
+                      <Musteri key={i} props={post}/>
+                    )
+                  })
+                }
+                 
+
+
+              </MDBTableBody>
+            </MDBTable>
 
           </div>
         </div>

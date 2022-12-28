@@ -9,9 +9,11 @@ import IconButton from '@mui/material/IconButton';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import avatar from '../../Assets/images/avatars/admin.jpg';
-
+import {removeUserSession} from '../../Utils/Common';
+import {Link, useNavigate} from 'react-router-dom';
 
 function NavbarProfile() {
+    const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -20,6 +22,11 @@ function NavbarProfile() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+
+    const handleLogout=()=>{
+        removeUserSession();
+        navigate('/login');
+    }
     return (
         <React.Fragment>
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -88,7 +95,7 @@ function NavbarProfile() {
                     <ListItemIcon>
                         <Logout fontSize="small" />
                     </ListItemIcon>
-                    Logout
+                    <Link onClick={()=>handleLogout()} to="/login">Logout</Link>
                 </MenuItem>
             </Menu>
         </React.Fragment>
