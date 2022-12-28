@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Product from './Product';
 import ProductsAdd from './ProductsAdd';
+import { getUser } from '../../Utils/Common';
 
 export class Products extends Component {
   constructor(props) {
@@ -18,7 +19,8 @@ export class Products extends Component {
     this.state = {
 
       posts: [],
-      open: false
+      open: false,
+      category:[]
 
     };
 
@@ -32,11 +34,22 @@ export class Products extends Component {
     this.setState({ open: false });
   };
   componentDidMount() {
-    axios.get(`https://localhost:44363/firmaurun/liste`)
+
+    const user=getUser();
+ 
+
+    axios.get(`https://localhost:44363/firmaurun/liste/`+user.firma_id)
       .then(res => {
         const posts = res.data.response;
         this.setState({ posts });
-
+        ////  kategorileri liste çekildikten sonra çektim
+        axios.get(`https://localhost:44363/urunkategori/liste/`+user.firma_id)
+        .then(res => {
+          const category = res.data.response;
+          this.setState({ category:category });
+          
+        })
+        /////
       })
 
   }
@@ -94,7 +107,7 @@ export class Products extends Component {
                   posts.map((post,i) => {
                     return(
                   
-                      <Product key={i} props={post}/>
+                      <Product key={i} props={post} />
                     )
                   })
                 }
@@ -113,7 +126,7 @@ export class Products extends Component {
         <Modal open={open} onClose={this.onCloseModal} style={{marginTop:"500px"}}>
                           <div className="card">
                             <div className="card-body">
-                               <ProductsAdd/>
+                               <ProductsAdd categories={this.state.category}/>
                             </div>
                           </div>
                         </Modal>

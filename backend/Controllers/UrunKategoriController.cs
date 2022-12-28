@@ -18,12 +18,37 @@ namespace backend.Controllers
             _context = context;
         }
         [HttpGet]
-        [Route("[controller]/liste")]
-        public Response liste()
+        [Route("[controller]/liste/{firmid}")]
+        public Response liste(int firmid)
         {
+     
+            
             try
             {
-                List<urunKategorisi> res = _context.urunKategorisi.ToList();
+                List<urunAltKategoriResponse> res = _context.urunKategorisi.Select(x => new urunAltKategoriResponse
+                {
+                    adi = x.adi,
+                    parent_id = x.parent_id,
+                    ekleme_tarihi = x.ekleme_tarihi,
+                    firm_id = x.firm_id,
+                    id = x.id,
+                    oneKategori = _context.urunKategorisi.Select(k => new oneKategori
+                    {
+                        adi = k.adi,
+                        ekleme_tarihi = k.ekleme_tarihi,
+                        firm_id = k.firm_id,
+                        parent_id = k.parent_id,
+                        id = k.id,
+                        twoKategori = _context.urunKategorisi.Select(m => new urunKategorisi
+                        {
+                            adi = m.adi,
+                            ekleme_tarihi = m.ekleme_tarihi,
+                            firm_id = m.firm_id,
+                            id = m.id,
+                            parent_id = m.parent_id
+                        }).Where(m => m.parent_id == k.id).ToList()
+                    }).Where(k => k.parent_id == x.id).ToList()
+                }).Where(k => k.parent_id == 0 && k.firm_id == firmid).ToList();
                 return new Response() { status = 200, response = res };
             }
             catch (Exception)

@@ -18,12 +18,12 @@ namespace backend.Controllers
             _context = context;
         }
         [HttpGet]
-        [Route("[controller]/liste")]
-        public Response liste()
+        [Route("[controller]/liste/{firmid}")]
+        public Response liste(int firmid)
         {
             try
             {
-                List<FirmaUrunListResponse> res = _context.firmaUrunleri.Select(x => new FirmaUrunListResponse
+                List<FirmaUrunListResponse> res = _context.firmaUrunleri.Where(x=>x.firma_id==firmid).Select(x => new FirmaUrunListResponse
                 {
                     firmaUrun = x,
                     kategori_adi = _context.urunKategorisi.Where(m => m.id == x.kategori_id).FirstOrDefault().adi,

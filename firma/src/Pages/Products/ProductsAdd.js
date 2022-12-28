@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Form, Button } from "react-bootstrap";
 class ProductsAdd extends Component {
   render() {
+
+    console.log("kategori",this.props.categories);
+    const kategorim=this.props.categories;
     return (
       <div>
         <h3 style={{textAlign:"center"}}>Ürün Ekle</h3>
@@ -30,7 +33,41 @@ class ProductsAdd extends Component {
             </Form.Group>
             <Form.Group style={{marginTop:"10px"}}>
             <span>Ürün Kategorisi:</span>
-                <Form.Control
+            <Form.Select>
+              {/* {<option key={0} value={0}>Seçiniz</option>} */}
+              {
+                kategorim?
+                kategorim.map((kategori,i)=>{
+                  if(+kategori.oneKategori.length===0)
+                  {
+                    return (<option key={i} value={kategori.id}>{kategori.adi}</option>);
+                  }
+                  else
+                  {
+                    return kategori.oneKategori.map((oneCategori,k)=>{
+                      
+                      if(+oneCategori.twoKategori.length===0)
+                        {
+                          return (<option key={k} value={oneCategori.id}>{oneCategori.adi}</option>);
+                        }
+                        else
+                        {
+                          return oneCategori.twoKategori.map((twoCategori,m)=>{
+                            return (<option key={m} value={twoCategori.id}>{twoCategori.adi}</option>);
+                          });
+                        }
+                    });
+                  }
+                  
+                })
+                  :null
+                  
+              }
+            
+            </Form.Select>
+
+
+                {/* <Form.Control
                     
               
                 placeholder="Ürün kategorisi"
@@ -38,7 +75,7 @@ class ProductsAdd extends Component {
               
                 required 
                
-                />
+                /> */}
             </Form.Group>
             <Form.Group style={{marginTop:"10px"}}>
             <span>Ürün Kodu:</span>

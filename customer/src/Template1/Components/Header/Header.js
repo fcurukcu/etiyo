@@ -86,22 +86,22 @@ class Header extends Component {
                                                 <li>
                                                     <a href="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></a>
                                                     <a className="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#" /></a>
-                                                    <h4><a href="#">Woman Ring</a></h4>
+                                                    <h4><a href="#">Kadın Elbise</a></h4>
                                                     <p className="quantity">1x - <span className="amount">99.00 TL</span></p>
                                                 </li>
                                                 <li>
                                                     <a href="#" className="remove" title="Remove this item"><i className="fa fa-remove"></i></a>
                                                     <a className="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#" /></a>
-                                                    <h4><a href="#">Woman Necklace</a></h4>
-                                                    <p className="quantity">1x - <span className="amount">$35.00</span></p>
+                                                    <h4><a href="#">Kadın Kazak</a></h4>
+                                                    <p className="quantity">1x - <span className="amount">35.00 TL</span></p>
                                                 </li>
                                             </ul>
                                             <div className="bottom">
                                                 <div className="total">
-                                                    <span>Total</span>
-                                                    <span className="total-amount">$134.00</span>
+                                                    <span>Toplam</span>
+                                                    <span className="total-amount">134.00 TL</span>
                                                 </div>
-                                                <Link onClick={() => this.urlChange('/product-payment')} to='/product-payment' className="btn animate">Checkout</Link>
+                                                <Link onClick={() => this.urlChange('/product-payment')} to='/product-payment' className="btn animate">Ödeme Yap</Link>
                                             </div>
                                         </div>
                                     </div>

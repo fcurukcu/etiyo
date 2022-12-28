@@ -43,7 +43,8 @@ namespace backend.Controllers
                   firma_adi=lec.firma_adi,
                   firma_mail=lec.firma_mail,
                   soyadi=lec.soyadi,
-                  token=lec.token
+                  token=lec.token,
+                  firma_id=lec.id
                 };
 
                 return new Response() { status = 200, response = response };
@@ -119,6 +120,29 @@ namespace backend.Controllers
             {
 
                 return new Response() { status = 500, response = "Hatayla karşılaşıldı" };
+            }
+        }
+
+        [HttpPost]
+        [Route("[controller]/firmabilgileri")]
+        public Response firmabilgileri(FirmaBilgileriUpdateRequest req)
+        {
+            try
+            {
+                firmaKullanicisi firm = _context.firmaKullanicisi
+                     .Where(x => x.id == req.firma.id).FirstOrDefault();
+                if (firm != null)
+                {
+                    firm.kullanici_adi = req.firma.kullanici_adi;
+                    firm.firma_adi = req.firma.firma_adi;
+                    _context.SaveChanges();
+                }
+                return new Response() { status = 200, response = "Güncelleme başarılı" };
+            }
+            catch (Exception)
+            {
+
+                return new Response() { status = 500, response = "Liste oluşturulurken hata oluştu" };
             }
         }
         [HttpGet]

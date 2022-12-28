@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace backend.ResponseModel
+namespace backend.RequestModel
 {
-    public class FirmaSiparisResponse
+    public class FirmaBilgileriUpdateRequest
     {
-        public urunSiparis siparis { get; set; }
-       
+        public firmaKullanicisi firma { get; set; }
     }
 }

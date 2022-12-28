@@ -14,5 +14,6 @@ namespace backend.ResponseModel
         public string firma_adi { get; set; }
         public string firma_mail { get; set; }
         public string token { get; set; }
+        public int firma_id { get; set; }
     }
 }
