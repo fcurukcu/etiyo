@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 class Categories extends Component {
     constructor(props) {
@@ -9,54 +10,37 @@ class Categories extends Component {
         this.props.urlFonk(row);
     }
     render() {
+        const categories = this.props.kategoriler;
         return (
             <div className="col-lg-3">
                 <div className="all-category">
                     <h3 className="cat-heading"><i className="fa fa-bars" aria-hidden="true"></i>Kategoriler</h3>
                     <ul className="main-category">
-                        <li><a href="#">Kadın <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                            <ul className="sub-category">
-                                <li><a href="#">Aksesuar <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <ul className="sub-sub-category">
-                                        <li><a href="#">Kolye</a></li>
-                                        <li><a href="#">Saat</a></li>
+                        {categories?categories.map((categori, i) => {
+                            return (
+                                <li key={i}><Link onClick={()=>this.urlChange("/products/" + categori.id)} to={"/products/" + categori.id}>{categori.adi} <i className="fa fa-angle-right" aria-hidden="true"></i></Link>
+                                    <ul className="sub-category">
+                                        {categori.oneKategori.map((oneKategori, m) => {
+                                            return (
+                                                <li key={m}><Link onClick={()=>this.urlChange("/products/" + oneKategori.id)} to={"/products/" + oneKategori.id}>{oneKategori.adi} <i className="fa fa-angle-right" aria-hidden="true"></i></Link>
+                                                    <ul className="sub-sub-category">
+                                                        {oneKategori.twoKategori.map((twoKategori, k) => {
+                                                            return (<li key={k}><Link  onClick={()=>this.urlChange("/products/" + twoKategori.id)} to={"/products/" + twoKategori.id}>{twoKategori.adi}</Link></li>)
+                                                        }
+                                                        )
+                                                        }
+
+                                                    </ul>
+                                                </li>
+                                            )
+                                        })
+                                        }
+
                                     </ul>
                                 </li>
-                                <li><a href="#">Kıyafet <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <ul className="sub-sub-category">
-                                        <li><a href="#">elbise</a></li>
-                                        <li><a href="#">tişört</a></li>
-                                    </ul>
-                                </li><li><a href="#">Ayakkabı <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <ul className="sub-sub-category">
-                                        <li><a href="#">Spor ayakkabı</a></li>
-                                        <li><a href="#">Sandelet</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Erkek <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                            <ul className="sub-category">
-                                <li><a href="#">Aksesuar <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <ul className="sub-sub-category">
-                                        <li><a href="#">Kolye</a></li>
-                                        <li><a href="#">Saat</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Kıyafet <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <ul className="sub-sub-category">
-                                        <li><a href="#">elbise</a></li>
-                                        <li><a href="#">tişört</a></li>
-                                    </ul>
-                                </li><li><a href="#">Ayakkabı <i className="fa fa-angle-right" aria-hidden="true"></i></a>
-                                <ul className="sub-sub-category">
-                                        <li><a href="#">Spor ayakkabı</a></li>
-                                        <li><a href="#">Sandelet</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                     
+                            )
+                        }):null}
+
                     </ul>
                 </div>
             </div>

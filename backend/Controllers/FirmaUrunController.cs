@@ -31,7 +31,11 @@ namespace backend.Controllers
                     kategori_adi = _context.urunKategorisi.Where(m => m.id == x.kategori_id).FirstOrDefault().adi,
                     firma_adi = _context.firmaKullanicisi.Where(m => m.id == x.firma_id).FirstOrDefault().firma_adi,
                     urun_tip_kodu = _context.urunTipKodlari.Where(m => m.id == x.urun_tip_id).FirstOrDefault().urun_tip_kodu,
-                  
+                   oneKategori = _context.urunKategorisi.Where(m => m.id == x.kategori_id).FirstOrDefault().parent_id!=0?
+                    _context.urunKategorisi.Where(m => m.id == _context.urunKategorisi.Where(m => m.id == x.kategori_id).FirstOrDefault().parent_id).FirstOrDefault().id:0,
+                    mainKategori = _context.urunKategorisi.Where(m => m.id == x.kategori_id).FirstOrDefault().parent_id != 0 ?
+                    _context.urunKategorisi.Where(m => m.id == _context.urunKategorisi.Where(m => m.id == x.kategori_id).FirstOrDefault().parent_id).FirstOrDefault().parent_id : 0
+
                 }).ToList();
                 return new Response() { status = 200, response = res };
             }
