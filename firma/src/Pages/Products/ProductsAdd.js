@@ -8,17 +8,13 @@ class ProductsAdd extends Component {
     super(props);
 
     this.state = {
-      
-      urun_kategori_id:"",
-      urun_adi:"",
+      kategori_id:"",
+      adi:"",
       urun_kodu:"",
       fiyat:"",
       urun_aciklama:"",
       urun_tip_kodu:"",
-      
-      urun_resim:""
-
-
+      resim:undefined
     };
     this.handleKategoriId=this.handleKategoriId.bind(this);
     this.handleUrunAdi=this.handleUrunAdi.bind(this);
@@ -30,12 +26,12 @@ class ProductsAdd extends Component {
   }
   handleKategoriId = (e) => {
     e.preventDefault();
-    this.setState({ urun_kategori_id: e.target.value });
+    this.setState({ kategori_id: e.target.value });
   
   };
   handleUrunAdi = (e) => {
     e.preventDefault();
-    this.setState({ urun_adi: e.target.value });
+    this.setState({ adi: e.target.value });
   
   };
   handleUrunKodu = (e) => {
@@ -60,31 +56,49 @@ class ProductsAdd extends Component {
   };
   handleUrunResim = (e) => {
     e.preventDefault();
-    this.setState({ urun_resim: e.target.value });
   
+    this.setState({ resim: e.target.files[0]});
+
   };
   handleSubmit = (e) => {
     e.preventDefault();
+   
     let data={
-      firma_id:getUser(),
+      firma_id:getUser().id,
       ozellikler:[3,7],
-      urun_kategori_id:this.state.urun_kategori_id,
-      urun_adi:this.state.urun_adi,
+      kategori_id:this.state.kategori_id,
+      adi:this.state.adi,
       urun_kodu:this.state.urun_kodu,
       fiyat:this.state.fiyat,
       urun_aciklama:this.state.urun_aciklama,
       urun_tip_kodu:this.state.urun_tip_kodu,
-      urun_resim:this.state.urun_resim
+      resim:this.state.resim
     };
-    axios
-    .post(`https://localhost:44363/firmaurun/ekle`, data)
-    .then((res) => {
-      alert("kullanici eklendi");
-    });
-    console.log(data)
+   
+    // axios
+    // .post(`https://localhost:44363/firmaurun/ekle`, data,)
+    // .then((res) => {
+    //   alert("kullanici eklendi");
+    // });
+    // console.log("fsdfdfds",data)
+    console.log("fsdfdfds",data)
+    axios({
+      method: "post",
+      url: "https://localhost:44363/firmaurun/ekle",
+      data: data,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
+      })
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
   }
   render() {
-    const{ urun_kategori_id,urun_adi,urun_kodu,fiyat,urun_aciklama,urun_tip_kodu,urun_resim}=this.state;
+    const{ kategori_id,adi,urun_kodu,fiyat,urun_aciklama,urun_tip_kodu,resim}=this.state;
     console.log("kategori",this.props.categories);
     const kategorim=this.props.categories;
     return (
@@ -99,7 +113,7 @@ class ProductsAdd extends Component {
                 placeholder="Ürün Adı"
                 name="adi"
 
-               value={urun_adi}
+               value={adi}
                onChange={this.handleUrunAdi}
                 required 
                
@@ -107,8 +121,12 @@ class ProductsAdd extends Component {
             </Form.Group>
             <Form.Group style={{marginTop:"10px"}}>
             <span>Ürün Kategorisi:</span>
-            <Form.Select value={urun_kategori_id} onChange={this.handleKategoriId}>
-              
+            <Form.Control 
+             placeholder = ""
+             id = "kategori_id"
+             as = "select"
+             value={kategori_id}
+             onChange={this.handleKategoriId}>
               {
                 kategorim?
                 kategorim.map((kategori,i)=>{
@@ -138,7 +156,7 @@ class ProductsAdd extends Component {
                   
               }
             
-            </Form.Select>
+            </Form.Control>
 
 
           
@@ -197,8 +215,9 @@ class ProductsAdd extends Component {
                 <Form.Control    
          style={{height:"30px"}}
                 type="file"
-                name='urun_resim'
-                value={urun_resim}
+                name='file'
+                accept="image/png, image/jpeg"
+                // value={resim}
                 onChange={this.handleUrunResim}
                 />    
          </Form.Group>
