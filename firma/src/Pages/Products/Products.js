@@ -36,12 +36,13 @@ export class Products extends Component {
   componentDidMount() {
 
     const user=getUser();
- 
+ console.log(user);
 
     axios.get(`https://localhost:44363/firmaurun/liste/`+user.firma_id)
       .then(res => {
         const posts = res.data.response;
         this.setState({ posts });
+       console.log(posts);
         ////  kategorileri liste çekildikten sonra çektim
         axios.get(`https://localhost:44363/urunkategori/liste/`+user.firma_id)
         .then(res => {

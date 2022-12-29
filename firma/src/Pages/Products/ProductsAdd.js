@@ -90,6 +90,7 @@ class ProductsAdd extends Component {
     })
       .then(function (response) {
         //handle success
+        alert("Kayıt işlemi başarılı",response)
         console.log(response);
       })
       .catch(function (response) {

@@ -11,5 +11,6 @@ namespace backend.Model
         public int urun_tip_id { get; set; }
         public string resim { get; set; }
         public DateTime ekleme_tarihi { get; set; }
+
     }
 }

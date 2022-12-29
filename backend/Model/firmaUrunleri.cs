@@ -16,5 +16,6 @@ namespace backend.Model
         public DateTime ekleme_tarihi { get; set; }
         public int fiyat { get; set; }
         public string urun_aciklama { get; set; }
+        public string resim { get; set; }
     }
 }

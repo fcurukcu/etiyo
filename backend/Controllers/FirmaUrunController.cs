@@ -27,9 +27,11 @@ namespace backend.Controllers
                 List<FirmaUrunListResponse> res = _context.firmaUrunleri.Where(x=>x.firma_id==firmid).Select(x => new FirmaUrunListResponse
                 {
                     firmaUrun = x,
+                  
                     kategori_adi = _context.urunKategorisi.Where(m => m.id == x.kategori_id).FirstOrDefault().adi,
                     firma_adi = _context.firmaKullanicisi.Where(m => m.id == x.firma_id).FirstOrDefault().firma_adi,
-                    urun_tip_kodu = _context.urunTipKodlari.Where(m => m.id == x.urun_tip_id).FirstOrDefault().urun_tip_kodu
+                    urun_tip_kodu = _context.urunTipKodlari.Where(m => m.id == x.urun_tip_id).FirstOrDefault().urun_tip_kodu,
+                  
                 }).ToList();
                 return new Response() { status = 200, response = res };
             }
@@ -90,6 +92,12 @@ namespace backend.Controllers
                     kat1.fiyat = req.fiyat;
                     kat1.urun_aciklama = req.urun_aciklama;
                     kat1.urun_tip_id = req.urun_tip_id;
+                    var extension = Path.GetExtension(req.resim.FileName);
+                    var newimagename = Guid.NewGuid() + extension;
+                    var location = Path.Combine(Directory.GetCurrentDirectory(), "images/Products", newimagename);
+                    var stream = new FileStream(location, FileMode.Create);
+                    req.resim.CopyTo(stream);
+                    kat1.resim = newimagename;
 
                     _context.firmaUrunleri.Add(kat1);
                     _context.SaveChanges();
@@ -106,15 +114,15 @@ namespace backend.Controllers
                     urunResim urun = new urunResim();
                     if (req.resim != null)
                     {
-                        var extension = Path.GetExtension(req.resim.FileName);
-                        var newimagename = Guid.NewGuid() + extension;
-                        var location = Path.Combine(Directory.GetCurrentDirectory(), "images/Products", newimagename);
-                        var stream = new FileStream(location, FileMode.Create);
-                        req.resim.CopyTo(stream);
+                        var extension2 = Path.GetExtension(req.resim.FileName);
+                        var newimagename2 = Guid.NewGuid() + extension2;
+                        var location2 = Path.Combine(Directory.GetCurrentDirectory(), "images/Products", newimagename2);
+                        var stream2 = new FileStream(location2, FileMode.Create);
+                        req.resim.CopyTo(stream2);
                         urun.resim = newimagename;
                     }
                     urun.ekleme_tarihi = DateTime.Now;
-                    urun.urun_tip_id = req.urun_tip_id;
+                   urun.urun_tip_id = req.urun_tip_id;
                     _context.urunResim.Add(urun);
                     _context.SaveChanges();
                     return new Response() { status = 200, response = "Kayıt işlemi başarılı" };
@@ -131,12 +139,12 @@ namespace backend.Controllers
 
         [HttpPost]
         [Route("[controller]/guncelle")]
-        public Response guncelle([FromBody] FirmaUrunRequest req)
+        public Response guncelle([FromForm] FirmaUrunlerRequest req)
         {
             try
             {
-                firmaUrunleri kat = _context.firmaUrunleri.Where(x => x.id == req.firmaUrun.id).FirstOrDefault();
-                firmaUrunleri isUrunCode = _context.firmaUrunleri.Where(x => x.id != req.firmaUrun.id && x.urun_kodu != req.firmaUrun.urun_kodu).FirstOrDefault();
+                firmaUrunleri kat = _context.firmaUrunleri.Where(x => x.id == req.id).FirstOrDefault();
+                firmaUrunleri isUrunCode = _context.firmaUrunleri.Where(x => x.id != req.id && x.urun_kodu != req.urun_kodu).FirstOrDefault();
                 if (kat != null && isUrunCode == null)
                 {
                     urunTipKodlari utipKod = _context.urunTipKodlari.Where(x => x.urun_tip_kodu == req.urun_tip_kodu).FirstOrDefault();
@@ -147,18 +155,18 @@ namespace backend.Controllers
                         ut.ekleme_tarihi = DateTime.Now;
                         _context.urunTipKodlari.Add(ut);
                         _context.SaveChanges();
-                        req.firmaUrun.urun_tip_id = ut.id;
+                        req.urun_tip_id = ut.id;
                     }
 
-                    kat.fiyat = req.firmaUrun.fiyat;
-                    kat.adi = req.firmaUrun.adi;
-                    kat.kategori_id = req.firmaUrun.kategori_id;
-                    kat.urun_aciklama = req.firmaUrun.urun_aciklama;
-                    kat.urun_kodu = req.firmaUrun.urun_kodu;
-                    kat.urun_tip_id = req.firmaUrun.urun_tip_id;
+                    kat.fiyat = req.fiyat;
+                    kat.adi = req.adi;
+                    kat.kategori_id = req.kategori_id;
+                    kat.urun_aciklama = req.urun_aciklama;
+                    kat.urun_kodu = req.urun_kodu;
+                    kat.urun_tip_id = req.urun_tip_id;
                     _context.SaveChanges();
 
-                    List<firmaUrunOzellikleri> delOzellik = _context.firmaUrunOzellikleri.Where(x => x.urun_id == req.firmaUrun.id).ToList();
+                    List<firmaUrunOzellikleri> delOzellik = _context.firmaUrunOzellikleri.Where(x => x.urun_id == req.id).ToList();
                     foreach (firmaUrunOzellikleri i in delOzellik)
                     {
                         _context.firmaUrunOzellikleri.Remove(i);
@@ -192,9 +200,9 @@ namespace backend.Controllers
             try
             {
                 firmaUrunleri kat = _context.firmaUrunleri.Where(x => x.id == id).FirstOrDefault();
-
                 if (kat != null)
                 {
+                    
                     _context.Remove(kat);
                     List<firmaUrunOzellikleri> delOzellik = _context.firmaUrunOzellikleri.Where(x => x.urun_id == id).ToList();
                     foreach (firmaUrunOzellikleri i in delOzellik)
