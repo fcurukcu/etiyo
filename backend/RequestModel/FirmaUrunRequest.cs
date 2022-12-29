@@ -1,4 +1,5 @@
 ﻿using backend.Model;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace backend.RequestModel
     public class FirmaUrunRequest
     {
         public firmaUrunleri firmaUrun { get; set; }
+     
+       
         public List<int> ozellikler { get; set; }
         public string urun_tip_kodu { get; set; }
     }
