@@ -12,5 +12,7 @@ namespace backend.ResponseModel
         public string kategori_adi { get; set; }
         public string firma_adi { get; set; }
         public string urun_tip_kodu { get; set; }
+        public int oneKategori { get; set; }
+        public int mainKategori { get; set; }
     }
 }

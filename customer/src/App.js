@@ -10,7 +10,8 @@ import Products from './Template1/Pages/Products/Products';
 import Basket from './Template1/Pages/Basket/Basket';
 import ProductPayment from './Template1/Pages/ProductPayment/ProductPayment';
 import Login from './Template1/Pages/Login/Login';
-
+import axios from 'axios';
+import ProductDetail from './Template1/Components/Product/ProductDetail';
 // import ForgetPassword from './pages/forgotpassword/ForgotPassword';
 // import Login from './pages/login/Login';
 // import PrivateRoute from './Utils/PrivateRoute';
@@ -22,16 +23,46 @@ class App extends Component {
     this.urlChange=this.urlChange.bind(this);
     if(window.location.pathname==='/template/0')
     {
-      localStorage.setItem('firmId',window.location.pathname.split('/')[2]);
+      localStorage.setItem('firmId',14);
       window.open('/');
+      // console.log("buraya girdi");
     }
   }
   state={
-    url:window.location.pathname
+    url:window.location.pathname,
+    category:null,
+    sepet:null,
+    product:null
   }
+
+  componentDidMount()
+  {
+      const firmId=localStorage.getItem('firmId');
+      axios.get(`https://localhost:44363/urunkategori/liste/`+firmId)
+      .then(res => {
+        const category = res.data.response;
+        this.setState({ category:category });
+        // console.log(category);
+      })
+
+      axios.get(`https://localhost:44363/firmaurun/liste/` + firmId)
+      .then(res => {
+          const product = res.data.response;
+          this.setState({ product: product });
+      })
+
+  }
+
   urlChange=(url)=>{
    
      useState({url:url});
+  }
+
+  sepeteEkle=(row)=>{
+    console.log("sepeti")
+  }
+  sepetenCikar=(row)=>{
+    console.log("sepet cikar")
   }
   render() {
 
@@ -40,7 +71,7 @@ class App extends Component {
       
       
       <BrowserRouter>
-      <Header url={this.state.url} urlFonk={this.urlChange}/>
+      <Header url={this.state.url} urlFonk={this.urlChange} kategoriler={this.state.category}  sepeteEkle={this.sepeteEkle} sepeteCikar={this.sepetenCikar} product={this.state.product}/>
       <Fragment>
         <Routes>
           {/* <Route exact path='/' element={<PrivateRoute/>}>
@@ -51,15 +82,16 @@ class App extends Component {
             }
 
           </Route> */}
-          <Route exact path='/' element={<Home url={this.state.url} urlFonk={this.urlChange}/>}/>
-          <Route exact path='/basket' element={<Basket url={this.state.url} urlFonk={this.urlChange}/>}/>
-          <Route exact path='/product-detail/:category/:id' element={<Index/>}/>
-          <Route exact path='/product-payment' element={<ProductPayment url={this.state.url} urlFonk={this.urlChange}/>}/>
-          <Route exact path='/contact' element={<Contact url={this.state.url} urlFonk={this.urlChange}/>}/>
-          <Route exact path='/aboutus' element={<Index/>}/>
-          <Route exact path='/products' element={<Products url={this.state.url} urlFonk={this.urlChange}/>}/>
-          <Route exact path='/login' element={<Login url={this.state.url} urlFonk={this.urlChange}/>}/>
-          <Route exact path='/template/:{firmid}' element={<Home url={this.state.url} urlFonk={this.urlChange}/>}/>
+          <Route exact path='/' element={<Home url={this.state.url} urlFonk={this.urlChange} kategoriler={this.state.category} sepeteEkle={this.sepeteEkle} sepeteCikar={this.sepetenCikar} product={this.state.product}/>}/>
+          <Route exact path='/basket' element={<Basket url={this.state.url} urlFonk={this.urlChange} kategoriler={this.state.category} sepeteEkle={this.sepeteEkle} sepeteCikar={this.sepetenCikar} product={this.state.product}/>}/>
+          <Route exact path='/product-detail/:id' element={<ProductDetail kategoriler={this.state.category} sepeteEkle={this.sepeteEkle} sepeteCikar={this.sepetenCikar} product={this.state.product} />}/>
+          <Route exact path='/product-payment' element={<ProductPayment url={this.state.url} urlFonk={this.urlChange} kategoriler={this.state.category} sepeteEkle={this.sepeteEkle} sepeteCikar={this.sepetenCikar} product={this.state.product}/>}/>
+          <Route exact path='/contact' element={<Contact url={this.state.url} urlFonk={this.urlChange} kategoriler={this.state.category} product={this.state.product}/>}/>
+          <Route exact path='/aboutus' element={<Index />}/>
+          <Route exact path='/products' element={<Products url={this.state.url} urlFonk={this.urlChange} kategoriler={this.state.category} sepeteEkle={this.sepeteEkle} sepeteCikar={this.sepetenCikar} product={this.state.product}/>}/>
+          <Route exact path='/products/:categoryid' element={<Products url={this.state.url} urlFonk={this.urlChange} kategoriler={this.state.category} sepeteEkle={this.sepeteEkle} sepeteCikar={this.sepetenCikar} product={this.state.product}/>}/>
+          <Route exact path='/login' element={<Login url={this.state.url} urlFonk={this.urlChange} kategoriler={this.state.category} sepeteEkle={this.sepeteEkle} sepeteCikar={this.sepetenCikar} product={this.state.product}/>}/>
+          <Route exact path='/template/:firmid' element={<Home url={this.state.url} urlFonk={this.urlChange} kategoriler={this.state.category} product={this.state.product}/>}/>
         </Routes>
       </Fragment>
       <Footer/>

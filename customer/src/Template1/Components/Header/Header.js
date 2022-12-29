@@ -3,6 +3,7 @@ import { Navigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import logo from '../../Assets/Image/logo.png';
 import Categories from '../Categories/Categories';
+import axios from 'axios';
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -11,8 +12,15 @@ class Header extends Component {
     urlChange(row) {
         this.props.urlFonk(row);
     }
+
+    state={
+        category:null
+    }
+  
     render() {
         console.log(this.props.url);
+
+        console.log(this.props.kategoriler);
         return (
             <header className="header shop">
                 <div className="topbar">
@@ -114,7 +122,7 @@ class Header extends Component {
                     <div className="container">
                         <div className="cat-nav-head">
                             <div className="row">
-                                {this.props.url === '/' ? <Categories /> : ''}
+                                {this.props.url === '/' ? <Categories kategoriler={this.props.kategoriler} /> : ''}
                                 <div className={this.props.url === '/' ? "col-lg-9 col-12" : "col-lg-12 col-12"}>
                                     <div className="menu-area">
                                         <nav className="navbar navbar-expand-lg">

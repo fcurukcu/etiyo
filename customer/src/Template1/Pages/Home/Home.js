@@ -11,7 +11,7 @@ class Home extends Component {
         <Slider/>
         
         {/* <Banner/> */}
-        <Product url={this.props.url} urlFonk={this.props.urlChange}/>
+        <Product url={this.props.url} urlFonk={this.props.urlChange} product={this.props.product}/>
         
         {/* <MidiumBanner/> */}
         {/* <PopularProct/> */}
