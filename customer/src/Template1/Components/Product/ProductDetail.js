@@ -1,23 +1,37 @@
 import React, { Component } from 'react'
 
 import OneProduct from './OneProduct';
-class Product extends Component {
+class ProductDetail extends Component {
     constructor(props) {
         super(props);
     }
 
+    state={
+        selectId:null
+    }
     urlChange(row) {
         this.props.urlFonk(row);
     }
+    componentDidMount()
+    {
+     
+        const url = window.location.pathname.split('/');
+        const urlParca = url.length == 3 ? url[2] : null;
+        this.setState({ selectId: urlParca });
+       
+    }
     render() {
-        console.log(this.props.product);
+        const url = window.location.pathname.split('/');
+        const urlParca = url.length == 3 ? url[2] : null;
+          const bulunanUrun=this.props.product?this.props.product.find((k)=>k.firmaUrun.id===+this.state.selectId):null;
+          console.log("bulunanUrun",bulunanUrun);
         return (
             <div className="product-area section">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
                             <div className="section-title">
-                                <h2>Tüm Ürünler</h2>
+                                <h2>{bulunanUrun?bulunanUrun.firmaUrun.adi:""}</h2>
                             </div>
                         </div>
                     </div>
@@ -30,8 +44,8 @@ class Product extends Component {
                                     <div className="tab-pane fade show active" id="man" role="tabpanel">
                                         <div className="tab-single">
                                             <div className="row">
-                                            {this.props.product ? this.props.product.map((pro, i) => <OneProduct key={i} product={pro} />
-                                            ) : null}
+                                                {bulunanUrun?<OneProduct  product={bulunanUrun} />:null}
+                                            
                                             </div>
                                         </div>
                                     </div>
@@ -45,4 +59,4 @@ class Product extends Component {
         )
     }
 }
-export default Product;
+export default ProductDetail;

@@ -1,0 +1,22 @@
+.main-category-pro{
+    border: 1px solid #cfcfcf;
+    padding: 12px;
+    border-radius: 10px;
+}
+.sub-category-pro{
+    border: 1px solid #e6f193;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fcffe5; 
+}
+.sub-category-pro>li>.sub-category>li{
+    background: #fb9700;
+    border-radius: 10px;
+    padding: 0 6px 0 12px;
+    color:#fff;
+    margin-bottom: 2px;
+}
+.cat-heading-pro{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #cfcfcf;
+}

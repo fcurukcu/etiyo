@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import pr1 from '../../Assets/Image/products/p9.jpg';
 import pr2 from '../../Assets/Image/products/p10.jpg';
+import { Link } from 'react-router-dom';
 class OneProduct extends Component {
     constructor(props) {
         super(props);
@@ -10,14 +11,16 @@ class OneProduct extends Component {
         this.props.urlFonk(row);
     }
   render() {
+    const produc=this.props.product;
+    // console.log("ssdfsdfsegeg",produc);
     return (
         <div className="col-xl-3 col-lg-4 col-md-4 col-12">
         <div className="single-product">
             <div className="product-img">
-                <a href="product-details.html">
+                <Link to={"/product-detail/"+produc.firmaUrun.id}>
                     <img className="default-img" src={pr1} alt="#" />
                     {/* <img className="hover-img" src={pr2} alt="#" /> */}
-                </a>
+                </Link>
                 <div className="button-head">
                     {/* <div className="product-action">
                         <a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i className=" ti-eye"></i><span>Quick Shop</span></a>
@@ -30,9 +33,9 @@ class OneProduct extends Component {
                 </div>
             </div>
             <div className="product-content">
-                <h3><a href="product-details.html">Gömlek</a></h3>
+                <h3><Link to={"/product-detail/"+produc.firmaUrun.id}>{produc.firmaUrun.adi}</Link></h3>
                 <div className="product-price">
-                    <span>$29.00</span>
+                    <span>{produc.firmaUrun.fiyat}</span>
                 </div>
             </div>
         </div>
