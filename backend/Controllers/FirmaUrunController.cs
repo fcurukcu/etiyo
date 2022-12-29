@@ -39,26 +39,26 @@ namespace backend.Controllers
             }
         }
         //resim eklememi sağlıyor
-        [HttpPost]
-        [Route("[controller]/uploadfiles")]
-        public Response uploadfiles(ResimEkleResponse img)
-        {
-            urunResim urun = new urunResim();
-            if (img.resim!=null)
-            {
-                var extension = Path.GetExtension(img.resim.FileName);
-                var newimagename = Guid.NewGuid() + extension;
-                var location = Path.Combine(Directory.GetCurrentDirectory(),"images/Products",newimagename);
-                var stream = new FileStream(location, FileMode.Create);
-                img.resim.CopyTo(stream);
-                urun.resim = newimagename;
-            }
-            urun.ekleme_tarihi = DateTime.Now;
-            urun.urun_tip_id = img.urun_tip_id;
-            _context.urunResim.Add(urun);
-            _context.SaveChanges();
-            return new Response() { status = 200, response = "Kayıt işlemi başarılı" };
-        }
+        //[HttpPost]
+        //[Route("[controller]/uploadfiles")]
+        //public Response uploadfiles(ResimEkleResponse img)
+        //{
+        //    urunResim urun = new urunResim();
+        //    if (img.resim!=null)
+        //    {
+        //        var extension = Path.GetExtension(img.resim.FileName);
+        //        var newimagename = Guid.NewGuid() + extension;
+        //        var location = Path.Combine(Directory.GetCurrentDirectory(),"images/Products",newimagename);
+        //        var stream = new FileStream(location, FileMode.Create);
+        //        img.resim.CopyTo(stream);
+        //        urun.resim = newimagename;
+        //    }
+        //    urun.ekleme_tarihi = DateTime.Now;
+        //    urun.urun_tip_id = img.urun_tip_id;
+        //    _context.urunResim.Add(urun);
+        //    _context.SaveChanges();
+        //    return new Response() { status = 200, response = "Kayıt işlemi başarılı" };
+        //}
         [HttpPost]
         [Route("[controller]/ekle")]
         public Response ekle([FromForm] FirmaUrunlerRequest req)
