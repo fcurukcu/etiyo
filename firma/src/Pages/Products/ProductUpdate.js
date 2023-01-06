@@ -2,23 +2,17 @@ import React, { Component } from 'react'
 import { Form, Button } from "react-bootstrap";
 class ProductUpdate extends Component {
     constructor(props){
-        super(props)
+        super(props);
+        const state={
+            firma_id:props.detay.props.firmaUrun.firma_id
+        }
     }
   render() {
     return (
         <div>
         <h3 style={{textAlign:"center"}}>Ürün Düzenle</h3>
        <Form className="mt-3" style={{paddingTop:"10px"}}>
-           <Form.Group style={{display:"none"}}>
-           
-                <Form.Control
-                type="text"
-                placeholder="Firma id"
-                name="firma_id"
-                value={this.props.detay.props.firmaUrun.firma_id}
-                required 
-                />
-            </Form.Group>
+      
             <Form.Group style={{marginTop:"10px"}}>
             <span>Ürün Adı:</span>
                 <Form.Control
@@ -88,11 +82,14 @@ class ProductUpdate extends Component {
             </Form.Group>
             
      
-         <Form.Group style={{marginTop:"10px"}}>
+            <Form.Group style={{marginTop:"10px"}}>
          <span>Ürün resmi Seç:</span>
                 <Form.Control    
          style={{height:"30px"}}
                 type="file"
+                name='file'
+                accept="image/png, image/jpeg"
+                // value={resim}
                 
                 />    
          </Form.Group>
