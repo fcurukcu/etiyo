@@ -1,13 +1,55 @@
 import React, { Component } from 'react'
-
+import {setUserSession} from '../../../Utils/Common';
+import axios from "axios";
 class Login extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            userId:"",
+            password:""
+          };
+          this.handleuserId=this.handleuserId.bind(this);
+          this.handlepassword=this.handlepassword.bind(this);
     }
-
+    handleuserId = (e) => {
+        e.preventDefault();
+        this.setState({ userId: e.target.value });
+      
+      };
+      handlepassword = (e) => {
+        e.preventDefault();
+        this.setState({ password: e.target.value });
+      
+      };
     urlChange(row) {
         this.props.urlFonk(row);
     }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        let data={
+            kullanici_adi:this.state.userId,
+           sifre:this.state.password,
+          };
+         
+         
+          axios({
+            method: "post",
+            url: "https://localhost:44363/musteri/login",
+            data: data,
+            headers: { "Content-Type": "multipart/form-data" },
+          })
+            .then(function (response) {
+            
+              alert("Giriş işlemi başarılı",response)
+              console.log(response);
+            })
+            .catch(function (response) {
+             
+              console.log(response);
+            });
+       
+      
+      }
   render() {
     return (
         <>
@@ -37,18 +79,18 @@ class Login extends Component {
                               <div className="title">
                                   <h3>Kullanıcı adı ve şifrenizi yazarak giriş yapınız</h3>
                               </div>
-                              <form className="form" method="post" action="mail/mail.php">
+                              <form  onSubmit={this.handleSubmit} className="form">
                                   <div className="row">
                                       <div className="col-lg-6 col-12">
                                           <div className="form-group">
                                               <label>Kullanıcı Adı<span>*</span></label>
-                                              <input name="name" type="text" placeholder=""/>
+                                              <input name="name" type="text" placeholder="" value={this.state.userId} onChange={this.handleuserId}/>
                                           </div>
                                       </div>
                                       <div className="col-lg-6 col-12">
                                           <div className="form-group">
                                               <label>Şifre<span>*</span></label>
-                                              <input name="subject" type="text" placeholder=""/>
+                                              <input name="subject" type="text" placeholder="" value={this.state.password} onChange={this.handlepassword}/>
                                           </div>
                                       </div>
                                     

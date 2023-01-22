@@ -77,10 +77,10 @@ export class FirmaUrunleri extends Component {
            <div className="secHeader flex">
               <div className="textDiv">
                  <h2 className="secTitle">
-                   Company Products
+                   Firma Ürünleri
                  </h2>
                  <p>
-                 The products of some companies whose ecommerce sites are developed with the Etiyo platform are listed. It is entirely at the request of the company or the user to advertise their products here. If he does not want, his products will not be shown.
+                 Etiyo platformu ile e-ticaret sitesi geliştiren bazı firmaların ürünleri listelenmektedir. Burada ürünlerinin reklamını yapmak tamamen firmanın veya kullanıcının isteğine bağlıdır. İstemiyorsa ürünleri gösterilmez.
                  </p>
               </div>
              {/* <div className="iconsDiv flex">
@@ -120,7 +120,7 @@ export class FirmaUrunleri extends Component {
          </div>
          <button className='btn'>
         
-         <LinkRouter className="a" to="/ecommerce">More Products</LinkRouter>
+         <LinkRouter className="a" to="/ecommerce">Daha Fazla Ürünler</LinkRouter>
         
        </button>
       </section>

@@ -7,6 +7,7 @@ using backend.Model;
 using backend.ResponseModel;
 using backend.FunctionModel;
 using System.Collections.Generic;
+using System.IO;
 
 namespace backend.Controllers
 {
@@ -125,19 +126,67 @@ namespace backend.Controllers
 
         [HttpPost]
         [Route("[controller]/firmabilgileri")]
-        public Response firmabilgileri(FirmaBilgileriUpdateRequest req)
+        public Response firmabilgileri([FromForm]FirmaSettingsRequest req)
         {
             try
             {
-                firmaKullanicisi firm = _context.firmaKullanicisi
-                     .Where(x => x.id == req.firma.id).FirstOrDefault();
+                firmaKullanicisi firm = _context.firmaKullanicisi.Where(x => x.id == req.id).FirstOrDefault();
                 if (firm != null)
                 {
-                    firm.kullanici_adi = req.firma.kullanici_adi;
-                    firm.firma_adi = req.firma.firma_adi;
+                    firm.adi = req.adi;
+                    firm.soyadi = req.soyadi;
+                    firm.adres = req.adres;
+                    firm.kullanici_adi = req.kullanici_adi;
+                    firm.firma_iban = req.firma_iban;
+                    firm.firma_adi = req.firma_adi;
+                    firm.firma_adres = req.firma_adres;
+                    firm.firma_domain = req.firma_domain;
+                    firm.firma_tel1 = req.firma_tel1;
+                    firm.firma_tel2 = req.firma_tel2;
+                    firm.firma_mail = req.firma_mail;
+                    firm.firma_facebook = req.firma_facebook;
+                    firm.firma_instagram = req.firma_instagram;
+                    firm.firma_twitter = req.firma_twitter;
+                    firm.firma_linkedin = req.firma_linkedin;
+                    firm.footer_yazi = req.footeryazi;
+                    if (req.firma_logo != null)
+                     {
+                             var extension = Path.GetExtension(req.firma_logo.FileName);
+                              var newimagename = Guid.NewGuid() + extension;
+                               var location = Path.Combine(Directory.GetCurrentDirectory(),"images/firmalogo",newimagename);
+                               var stream = new FileStream(location, FileMode.Create);
+                               req.firma_logo.CopyTo(stream);
+                        firm.firma_logo = newimagename;
+                     }
+                    if (req.firma_slider != null)
+                    {
+                        var extension = Path.GetExtension(req.firma_slider.FileName);
+                        var newimagename = Guid.NewGuid() + extension;
+                        var location = Path.Combine(Directory.GetCurrentDirectory(), "images/slider", newimagename);
+                        var stream = new FileStream(location, FileMode.Create);
+                        req.firma_slider.CopyTo(stream);
+                        firm.firma_slider = newimagename;
+                    }
                     _context.SaveChanges();
                 }
                 return new Response() { status = 200, response = "Güncelleme başarılı" };
+            }
+            catch (Exception)
+            {
+
+                return new Response() { status = 500, response = "Liste oluşturulurken hata oluştu" };
+            }
+        }
+        [HttpGet]
+        [Route("[controller]/firmabilgilerilistesi/{firmaid}")]
+        public Response firmabilgilerilistesi(int firmaid)
+        {
+            try
+            {
+
+
+                List<firmaKullanicisi> res = _context.firmaKullanicisi.Where(x => x.id == firmaid).ToList();
+                return new Response() { status = 200, response = res };
             }
             catch (Exception)
             {
@@ -160,6 +209,7 @@ namespace backend.Controllers
                 return new Response() { status = 500, response = "Liste oluşturulurken hata oluştu" };
             }
         }
+    
 
         [HttpPost]
         [Route("[controller]/statusupdate")]

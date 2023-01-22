@@ -31,7 +31,9 @@ namespace backend.Controllers
                 {
                     siparis = x,
 
-                    firma_adi = _context.firmaKullanicisi.Where(m => m.id == x.firma_id).FirstOrDefault().firma_adi,
+                    urunNo = _context.firmaUrunleri.Where(m=>m.urun_kodu==x.urun_kodu).FirstOrDefault().urun_kodu,
+               
+                    urunAdi=_context.firmaUrunleri.Where(m=>m.id==x.urun_id).FirstOrDefault().adi
 
                 }).ToList();
                 return new Response() { status = 200, response = res };
@@ -41,5 +43,52 @@ namespace backend.Controllers
                 return new Response() { status = 500, response = "Liste oluşturulurken hata oluştu" };
             }
         }
+
+        [HttpPost]
+        [Route("[controller]/siparisdurum")]
+        public Response siparisdurum(FirmaSiparis req)
+        {
+            try
+            {
+                urunSiparis siparis = _context.urunSiparis
+                     .Where(x => x.firma_id == req.firma_id && x.id==req.id).FirstOrDefault();
+                if (siparis != null)
+                {
+                    siparis.onay_durumu = req.onay_durumu;
+                    _context.SaveChanges();
+                }
+                return new Response() { status = 200, response = "Güncelleme başarılı" };
+            }
+            catch (Exception)
+            {
+
+                return new Response() { status = 500, response = "Liste oluşturulurken hata oluştu" };
+            }
+        }
+
+        [HttpPost]
+        [Route("[controller]/siparisKargoKoduEkleme")]
+        public Response siparisKargoKoduEkleme(FirmaSiparis req)
+        {
+            try
+            {
+                urunSiparis siparis = _context.urunSiparis
+                     .Where(x => x.firma_id == req.firma_id && x.id == req.id).FirstOrDefault();
+                if (siparis != null)
+                {
+                    siparis.kargo_kodu = req.kargo_kodu;
+                    _context.SaveChanges();
+                }
+                return new Response() { status = 200, response = "Güncelleme başarılı" };
+            }
+            catch (Exception)
+            {
+
+                return new Response() { status = 500, response = "Liste oluşturulurken hata oluştu" };
+            }
+        }
+
+
     }
+
 }

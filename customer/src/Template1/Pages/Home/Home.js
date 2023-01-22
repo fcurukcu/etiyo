@@ -4,19 +4,22 @@ import Product from '../../Components/Product/Product';
 import Slider from '../../Components/Slider/Slider';
 
 class Home extends Component {
+  constructor(props)
+  {
+    super(props)
+   
+    
+  }
   render() {
     return (
     <div>
-        {/* <Header/> */}
+
         <Slider/>
         
-        {/* <Banner/> */}
+        
         <Product url={this.props.url} urlFonk={this.props.urlChange} product={this.props.product}/>
         
-        {/* <MidiumBanner/> */}
-        {/* <PopularProct/> */}
-        {/* <FreeVersionBanner/> */}
-        {/* <Footer/> */}
+       
       </div>
     )
   }

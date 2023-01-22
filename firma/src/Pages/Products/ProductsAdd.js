@@ -75,13 +75,7 @@ class ProductsAdd extends Component {
       resim:this.state.resim
     };
    
-    // axios
-    // .post(`https://localhost:44363/firmaurun/ekle`, data,)
-    // .then((res) => {
-    //   alert("kullanici eklendi");
-    // });
-    // console.log("fsdfdfds",data)
-    console.log("fsdfdfds",data)
+    
     axios({
       method: "post",
       url: "https://localhost:44363/firmaurun/ekle",
@@ -91,12 +85,9 @@ class ProductsAdd extends Component {
       .then(function (response) {
         //handle success
         alert("Kayıt işlemi başarılı",response)
-        console.log(response);
+        
       })
-      .catch(function (response) {
-        //handle error
-        console.log(response);
-      });
+      
   }
   render() {
     const{ kategori_id,adi,urun_kodu,fiyat,urun_aciklama,urun_tip_kodu,resim}=this.state;

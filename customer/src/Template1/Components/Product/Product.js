@@ -4,13 +4,13 @@ import OneProduct from './OneProduct';
 class Product extends Component {
     constructor(props) {
         super(props);
+       
     }
 
     urlChange(row) {
         this.props.urlFonk(row);
     }
     render() {
-        console.log(this.props.product);
         return (
             <div className="product-area section">
                 <div className="container">

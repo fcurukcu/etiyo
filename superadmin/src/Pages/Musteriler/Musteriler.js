@@ -25,6 +25,14 @@ export class Musteriler extends Component {
       })
 
   }
+  componentDidUpdate(){
+    axios.get(`https://localhost:44363/firma/firmalistesi`)
+    .then(res => {
+      const posts = res.data.response;
+      this.setState({ posts });
+
+    })
+  }
 
   render() {
   
@@ -66,7 +74,8 @@ export class Musteriler extends Component {
                   <th scope='col'>Firma Telefon</th>
                   <th scope='col'>Firma Mail</th>
                   <th scope='col'>Firma Domain</th>
-                  <th scope='col'>Web Sitesini Kaldır</th>
+                  <th scope='col'>Web Sitesi Durumu</th>
+                  <th scope='col'>Web Sitesini işlem</th>
                   <th scope='col'>Web Sitesine Git</th>
                 </tr>
               </MDBTableHead>

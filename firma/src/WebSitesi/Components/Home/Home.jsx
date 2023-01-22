@@ -19,11 +19,11 @@ function Home() {
     <section id='home' className='home'>
       <div className="secContainer container">
         <div className="homeText">
-          <h1  className="title">Build Your Own Site</h1>
-          <p className="subTitle">Explore this platform that allows you to create, develop and design your website the way you want.</p>
+          <h1  className="title">Kendi Siteni Kur</h1>
+          <p className="subTitle">Web sitenizi istediğiniz gibi oluşturmanıza, geliştirmenize ve tasarlamanıza olanak tanıyan bu platformu keşfedin.</p>
           <LinkRouter className="LoginRouter" to="/login">
           <button  className='btn'>
-          Explore Now
+          Şimdi Keşfet
           </button>
           </LinkRouter>
         </div>

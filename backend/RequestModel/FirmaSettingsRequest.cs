@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,9 +21,15 @@ namespace backend.RequestModel
         public string firma_adres { get; set; }
         public string firma_iban { get; set; }
         public string firma_domain { get; set; }
-        public string firma_logo { get; set; }
-        public string firma_slider { get; set; }
-      
-       
+        public string firma_facebook { get; set; }
+        public string firma_instagram { get; set; }
+        public string firma_twitter { get; set; }
+        public string firma_linkedin { get; set; }
+        public string footeryazi { get; set; }
+
+        public IFormFile firma_logo { get; set; }
+        public IFormFile firma_slider { get; set; }
+
+
     }
 }

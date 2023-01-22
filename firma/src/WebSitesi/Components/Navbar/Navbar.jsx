@@ -43,30 +43,30 @@ const Navbar = () => {
         <div className={active}>
           <ul className="navListsFirmaGiris flex">
             <li className="navItemFirmaGiris">
-              <LinkScroll className="navLinkFirmaGiris" to="home" smooth={true} duration={500}>Home</LinkScroll>
+              <LinkScroll className="navLinkFirmaGiris" to="home" smooth={true} duration={500}>Anasayfa</LinkScroll>
             </li>
             <li className="navItemFirmaGiris">
-              <LinkScroll className="navLinkFirmaGiris" to="firmaUrunleri" smooth={true} offset={-15} duration={500}>Products</LinkScroll>
+              <LinkScroll className="navLinkFirmaGiris" to="firmaUrunleri" smooth={true} offset={-15} duration={500}>Ürünler</LinkScroll>
             </li>
             <li className="navItemFirmaGiris">
-              <LinkScroll className="navLinkFirmaGiris" to="about" smooth={true} offset={-50} duration={500}>About</LinkScroll>
+              <LinkScroll className="navLinkFirmaGiris" to="about" smooth={true} offset={-50} duration={500}>Hakkımızda</LinkScroll>
             </li>
             <li className="navItemFirmaGiris">
-              <LinkScroll className="navLinkFirmaGiris" to="iletisim" smooth={true} offset={-50} duration={500}>Contact</LinkScroll>
+              <LinkScroll className="navLinkFirmaGiris" to="iletisim" smooth={true} offset={-50} duration={500}>İletişim</LinkScroll>
             </li>
             <li className="navItemFirmaGiris">
-              <LinkRouter className="navLinkFirmaGiris" to="/ecommerce">Ecommerce</LinkRouter>
+              <LinkRouter className="navLinkFirmaGiris" to="/ecommerce">Tüm Ürünler</LinkRouter>
             </li>
             <div className="headerBtns flex">
               <LinkRouter className="btna" to="/login">
                 <button className="btnfirmaGiris loginBtn">
-                  Login
+                  Giriş yap
 
                 </button>
               </LinkRouter>
               <LinkRouter className="btna" to="/singup">
                 <button className="btnfirmaGiris loginBtn">
-                  Sing Up
+                  Üye ol
                 </button>
               </LinkRouter>
             </div>

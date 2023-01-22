@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import { Link} from 'react-router-dom';
+import React, { useState,useEffect } from 'react';
+import { Link,useLocation} from 'react-router-dom';
 import './Sidebar.css';
 import logo from '../../Assets/logo.png';
 import Navbar from '../Navbar/Navbar';
 const Sidebar = ({page}) => {
   const [show, setShow] = useState(false);
+  const location = useLocation(); 
+  const [url, setUrl] = useState(null);
+  useEffect(() => {
+    setUrl(location.pathname);
+  }, [location]);
 
   return (
    
@@ -25,15 +30,15 @@ const Sidebar = ({page}) => {
            
 
             <div className='nav-listadmin'>
-            <Link to='/' className='nav-linkadmin active'>
+            <Link to='/'  className={"nav-linkadmin underline" + (url === "/" ?"nav-linkadmin active" : "")}>
               <i className={`fas fa-th-large nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
               <span className='nav-link-name'>Anasayfa</span>
             </Link>
-              <Link to='/musteriler' className='nav-linkadmin'>
+              <Link to='/musteriler' className={"nav-linkadmin underline" + (url === "/musteriler" ?"nav-linkadmin active" : "")}>
               <i className={`fa-solid fa-pen-to-square nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
                 <span className='nav-link-name'>Müşteriler</span>
               </Link>
-              <Link to='/destek' className='nav-linkadmin'>
+              <Link to='/destek' className={"nav-linkadmin underline" + (url === "/destek" ?"nav-linkadmin active" : "")}>
               <i className={`fa-solid fa-bag-shopping  nav-link-icon ${show ? 'nav-link-icon-show' : null}`}></i>
                 <span className='nav-link-name'>Destek</span>
               </Link>

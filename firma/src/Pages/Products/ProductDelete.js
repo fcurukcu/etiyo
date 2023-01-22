@@ -4,7 +4,7 @@ import axios from 'axios';
 class ProductDelete extends Component {
   constructor(props){
     super(props);
-    console.log(props.detay.props.firmaUrun.id);
+   
   }
   deleteRow(id){  
     axios.get(`https://localhost:44363/firmaurun/sil/`+id)

@@ -5,7 +5,6 @@ import { Link, withRouter } from 'react-router-dom';
 import queryString from 'query-string';
 import Categories from '../../Components/Categories/Categories';
 import './Products.css';
-// import queryString from 'query-string';
 class Products extends Component {
     constructor(props) {
         super(props);
@@ -27,12 +26,12 @@ class Products extends Component {
         this.setState({ category: urlParca });
        
         this.setState({ productPageName:  this.productCategoryNameFind(urlParca) });
+
         const firmId = localStorage.getItem('firmId');
         axios.get(`https://localhost:44363/firmaurun/liste/` + firmId)
             .then(res => {
                 const product = res.data.response;
                 this.setState({ product: product });
-                console.log(product);
             })
     }
 
@@ -43,7 +42,7 @@ class Products extends Component {
         {
             this.props.kategoriler.forEach(kat => {
                
-                if(kat.id===id)
+                if(+kat.id===+id)
                 {
                     name=name+' > '+kat.adi;
                 }
@@ -51,7 +50,7 @@ class Products extends Component {
                 {
                     kat.oneKategori.forEach(oneKategori => {
                         
-                        if(oneKategori.id===id)
+                        if(+oneKategori.id===+id)
                         {
                             name=name+' > '+kat.adi+' > '+oneKategori.adi;
                         }
@@ -74,7 +73,7 @@ class Products extends Component {
 
     render() {
 
-        console.log("ürün kategrileri", this.props.kategoriler);
+        let baslik=this.productCategoryNameFind(this.state.category);
         let cat = this.state.category;
         const categories = this.props.kategoriler;
         return (
@@ -86,7 +85,7 @@ class Products extends Component {
                                 <div className="bread-inner">
                                     <ul className="bread-list">
                                         <li><a href="#">Anasayfa<i className="fa fa-arrow-right"></i></a></li>
-                                        <li className="active"><a href="#">{this.state.productPageName}</a></li>
+                                        <li className="active"><a href="#">{baslik}</a></li>
                                     </ul>
                                 </div>
                             </div>

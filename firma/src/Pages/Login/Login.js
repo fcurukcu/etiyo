@@ -2,7 +2,6 @@ import React,{useState} from 'react'
 import './Login.css';
 import logo from '../../Assets/logo.png';
 import {json, Link as LinkRouter, useNavigate,} from 'react-router-dom';
-import {Button} from '@mui/material';
 import {setUserSession} from '../../Utils/Common';
 import axios from "axios";
 function Login(){
@@ -27,8 +26,7 @@ function Login(){
         setError(null);
         setLoading(true);
      
-        ////// apiye bağlandıktan sonra 
-           
+   
       
             axios.post('https://localhost:44363/firma/login',{
                 kullanici_adi:values.userId,sifre:values.password
@@ -75,23 +73,22 @@ function Login(){
                     <img className='etiyoLogo' src={logo}/>
                     <div className="form-fields">
                         <div className="form-group">
-                            <input type="text" className="user-email" placeholder="Username/Email" onChange={handleChange('userId')}/>
+                            <input type="text" className="user-email" placeholder="Kullanıcı Adı" onChange={handleChange('userId')}/>
 
                         </div>
                         <div className="form-group">
-                            <input type="password" className="user-pass" placeholder="Password" onChange={handleChange('password')}/>
+                            <input type="password" className="user-pass" placeholder="Şifre" onChange={handleChange('password')}/>
                             
                         </div>
                         <div className="fpass">
-                            <span className="fpass-btn"><LinkRouter className="fpassBtnLink" to="/forgetpassword">Forget Password?</LinkRouter></span>
+                            <span className="fpass-btn"><LinkRouter className="fpassBtnLink" to="/forgetpassword">Şifremi Unuttum?</LinkRouter></span>
                         </div>
                     </div>
-                           {/* <input type="submit" value="Sign Up" className="submit-buttonAdminlogin" /> */}
                 {loading && <input type="submit" value="Bekliyor" disabled className="submit-button" />}
-                    {!loading && <input type="submit" value="Login" className="submit-button" />}
+                    {!loading && <input type="submit" value="Giriş Yap" className="submit-button" />}
                     {error && <p style={{    textAlign: "center",marginTop: "10px",color: "red"}}>{error}</p>}
                 </form>
-                <p className="signin-here">Don't have an account ? <LinkRouter to="/singup">Sing Up</LinkRouter></p>
+                <p className="signin-here">Hesabınız yok mu?<LinkRouter to="/singup">Üye ol</LinkRouter></p>
             </div>
          
         </div>

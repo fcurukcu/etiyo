@@ -2,7 +2,6 @@ import { BrowserRouter,Route,Routes} from 'react-router-dom';
 import React, {Fragment} from 'react';
 import PrivateRoute from './Utils/PrivateRoute';
 import Anasayfa from './Pages/Dashboard/Anasayfa';
-import Musteriler from './Pages/Musteriler/Musteriler';
 import Destek from './Pages/Destek/Destek';
 import Login from './Pages/Login/Login';
 import HomePage from './WebSitesi/Pages/HomePage';
@@ -13,7 +12,7 @@ import Templates from './Pages/Templates/Templates';
 import Orders from './Pages/Orders/Orders';
 import Products from './Pages/Products/Products';
 import Categories from './Pages/Categories/Categories';
-import Settings from './Pages/Settings/Settings';
+import SettingsList from './Pages/Settings/SettingsList';
 function App() {
   return (
     <div>
@@ -27,7 +26,7 @@ function App() {
             <Route exact path='/admin/products' element={<Products/>} />
             <Route exact path='/admin/categories' element={<Categories/>} />
             <Route exact path='/admin/support' element={<Destek/>} />
-            <Route exact path='/admin/settings' element={<Settings/>} />
+            <Route exact path='/admin/settings' element={<SettingsList/>} />
             {/* <Route exact path='/admin/web-site' element={<Destek/>} /> */}
             <Route exact path='/admin/templates' element={<Templates/>} />
           </Route>
