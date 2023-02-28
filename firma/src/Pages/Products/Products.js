@@ -3,9 +3,6 @@ import { render } from "react-dom";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
-import { Link } from 'react-router-dom';
-
-
 import axios from 'axios';
 import Product from './Product';
 import ProductsAdd from './ProductsAdd';
@@ -15,15 +12,11 @@ export class Products extends Component {
   constructor(props) {
 
     super(props);
-
     this.state = {
-
       posts: [],
       open: false,
       category:[]
-
     };
-
   }
 
   onOpenModal = () => {
@@ -33,10 +26,8 @@ export class Products extends Component {
   onCloseModal = () => {
     this.setState({ open: false });
   };
-  componentDidMount() {
-
+  dataVeriler(){
     const user=getUser();
- console.log(user);
 
     axios.get(`https://localhost:44363/firmaurun/liste/`+user.firma_id)
       .then(res => {
@@ -52,7 +43,14 @@ export class Products extends Component {
         })
         /////
       })
+  }
+  componentDidMount() {
 
+    this.dataVeriler();
+
+  }
+  componentDidUpdate(){
+    this.dataVeriler();
   }
 
 
@@ -108,7 +106,7 @@ export class Products extends Component {
                   posts.map((post,i) => {
                     return(
                   
-                      <Product key={i} props={post} />
+                      <Product key={i} props={post} kategori={this.state.category}/>
                     )
                   })
                 }

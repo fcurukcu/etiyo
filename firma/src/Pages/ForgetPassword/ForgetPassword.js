@@ -16,7 +16,7 @@ export class ForgetPassword extends Component {
                   </div>
 
                 </div>
-                <input type="submit" value="Forget Password" className="submit-buttonForget" />
+                <input type="submit" value="Şifremi Unuttum" className="submit-buttonForget" />
               </form>
 
             </div>

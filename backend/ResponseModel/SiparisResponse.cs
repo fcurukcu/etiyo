@@ -9,6 +9,9 @@ namespace backend.ResponseModel
     public class SiparisResponse
     {
         public urunSiparis siparis { get; set; }
-        public string firma_adi { get; set; }
+        public string urunNo { get; set; }
+        public string urunAdi { get; set; }
+
+
     }
 }

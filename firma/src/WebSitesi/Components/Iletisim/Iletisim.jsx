@@ -29,30 +29,30 @@ export class Iletisim extends Component {
           </div>
           <div className="iletisimLinks">
               <span className="linkTitle">
-                 Informations
+              Bilgiler
               </span>
               <li>
-            <Link className="a" to="home" smooth={true} duration={500}>Home</Link>
+            <Link className="a" to="home" smooth={true} duration={500}>Anasayfa</Link>
               
             </li>
             <li>
-            <Link className="a" to="firmaUrunleri" smooth={true} offset={-15} duration={500}>Products</Link>
+            <Link className="a" to="firmaUrunleri" smooth={true} offset={-15} duration={500}>Ürünler</Link>
           
             </li>
             <li>
-            <Link className="a" to="about" smooth={true} offset={-50} duration={500}>About</Link>
+            <Link className="a" to="about" smooth={true} offset={-50} duration={500}>Hakkımızda</Link>
             
             </li>
 
             <li>
-            <Link className="a" to="iletisim" smooth={true} offset={-50} duration={500}>Contact</Link>
+            <Link className="a" to="iletisim" smooth={true} offset={-50} duration={500}>İletişim</Link>
       
             </li>
           </div>
          
           <div className="iletisimLinks">
               <span className="linkTitle">
-                 Contact Us
+              Bize Ulaşın
               </span>
               <span className="phone">0555 222 12 12</span>
               <span className="email">etiyo@gmail.com</span>

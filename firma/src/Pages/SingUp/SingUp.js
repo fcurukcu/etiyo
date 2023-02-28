@@ -97,9 +97,9 @@ export class SingUp extends Component {
                 </div>
 
               </div>
-              <input type="submit" value="Sign Up" className="submit-buttonSingUp" />
+              <input type="submit" value="Üye Ol" className="submit-buttonSingUp" />
             </form>
-            <p className="signin-here">Do you want to login? <LinkRouter to="/login">Sing In</LinkRouter></p>
+            <p className="signin-here">Giriş yapmak istiyor musunuz?<LinkRouter to="/login">Giriş Yap</LinkRouter></p>
 
           </div>
 

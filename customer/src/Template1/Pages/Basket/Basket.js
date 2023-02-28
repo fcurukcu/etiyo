@@ -19,7 +19,7 @@ export default class Basket extends Component {
 					<div className="bread-inner">
 						<ul className="bread-list">
 							<li><a href="index1.html">Anasayfa<i className="fa fa-arrow-right"></i></a></li>
-							<li className="active"><a href="#">Siparişlerim</a></li>
+							<li className="active"><a href="#">Sepetim</a></li>
 						</ul>
 					</div>
 				</div>
@@ -27,7 +27,7 @@ export default class Basket extends Component {
 		</div>
 	</div>
     <div className='container' style={{textAlign: "center",paddingTop: "37px"}}>
-                        <h3>------ Siparişlerim ------</h3>
+                        <h3>------ Sepetim ------</h3>
                     </div>
     <div className="shopping-cart section">
 		<div className="container">

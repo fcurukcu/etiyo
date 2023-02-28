@@ -21,8 +21,6 @@ namespace backend.Controllers
         [Route("[controller]/liste/{firmid}")]
         public Response liste(int firmid)
         {
-     
-            
             try
             {
                 List<urunAltKategoriResponse> res = _context.urunKategorisi.Select(x => new urunAltKategoriResponse
@@ -64,7 +62,7 @@ namespace backend.Controllers
         {
             try
             {
-                urunKategorisi kat = _context.urunKategorisi.Where(x => x.adi == req.adi && x.parent_id == req.parent_id).FirstOrDefault();
+                urunKategorisi kat = _context.urunKategorisi.Where(x => x.adi == req.adi && x.parent_id == req.parent_id && x.firm_id==req.firm_id).FirstOrDefault();
 
                 if (kat == null)
                 {
@@ -72,6 +70,7 @@ namespace backend.Controllers
                     {
                         adi = req.adi,
                         parent_id = req.parent_id,
+                        firm_id=req.firm_id,
                         ekleme_tarihi = DateTime.Now
                     };
                     _context.urunKategorisi.Add(kat1);
@@ -112,22 +111,23 @@ namespace backend.Controllers
         [Route("[controller]/sil/{id}")]
         public Response sil(int id)
         {
-            try
-            {
-                urunKategorisi kat = _context.urunKategorisi.Where(x => x.id == id).FirstOrDefault();
+            urunKategorisi kat = _context.urunKategorisi.Where(x => x.id == id).FirstOrDefault();
 
-                if (kat != null)
-                {
-                    _context.Remove(kat);
-                    _context.SaveChanges();
-                    return new Response() { status = 200, response = "Silme işlemi başarılı" };
-                }
-                return new Response() { status = 500, response = "Bu ürün kategorisi bulunamadı" };
-            }
-            catch (Exception)
+            if (kat != null)
             {
-                return new Response() { status = 500, response = "Liste oluşturulurken hata oluştu" };
+                _context.Remove(kat);
+                _context.SaveChanges();
+                return new Response() { status = 200, response = "Silme işlemi başarılı" };
             }
+            return new Response() { status = 500, response = "Bu ürün kategorisi bulunamadı" };
+            //try
+            //{
+               
+            //}
+            //catch (Exception)
+            //{
+            //    return new Response() { status = 500, response = "Liste oluşturulurken hata oluştu" };
+            //}
         }
     }
 }

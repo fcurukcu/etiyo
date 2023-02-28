@@ -145,3 +145,46 @@ table.table .avatar {
 .modal form label {
 	font-weight: normal;
 }
+.Sil {
+    padding: 16px;
+    text-align: center;
+  }
+  .cancelbtn, .deletebtn {
+    float: left;
+    width: 50%;
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  /* Add a color to the cancel button */
+  .cancelbtn {
+    background-color: #ccc;
+    color: black;
+  }
+  
+  /* Add a color to the delete button */
+  .deletebtn {
+    background-color: #f44336;
+  }
+  .cancelbtn, .deletebtn {
+    float: left;
+    width: 50%;
+  }
+  .btn-act{
+    padding: 2px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+    
+  }
+  .modal-content{
+    margin-top: 20px;
+  }

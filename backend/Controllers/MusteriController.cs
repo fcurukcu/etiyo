@@ -58,7 +58,7 @@ namespace backend.Controllers
 
         [HttpPost]
         [Route("[controller]/register")]
-        public Response register(MusteriRegisterRequest req)
+        public Response register([FromForm]MusteriRegisterRequest req)
         {
             try
             {

@@ -14,6 +14,7 @@ class Product extends Component {
       open3: false
 
     };
+  
   }
   onOpenModal = () => {
     this.setState({ open: true });
@@ -65,7 +66,7 @@ class Product extends Component {
         <Modal open={open2} onClose={this.onCloseModal2}>
           <div className="card">
             <div className="card-body">
-              <ProductUpdate detay={this.props} />
+              <ProductUpdate detay={this.props} kategori={this.props.kategori}/>
             </div>
           </div>
         </Modal>

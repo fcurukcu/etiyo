@@ -29,6 +29,7 @@ namespace backend.Model
         public string footer_yazi { get; set; }
         public string template_kodu { get; set; }
         public bool site_aktif_pasif { get; set; }
+      
         public DateTime ekleme_tarihi { get; set; }
         public string token { get; set; }
 
